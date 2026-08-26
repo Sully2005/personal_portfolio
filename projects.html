@@ -3,519 +3,237 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engineering Projects | Muhammad Ahmad</title>
-  <meta name="description" content="Engineering projects by Muhammad Ahmad: Reflow Oven Controller, Field-Tracking RC Car, FPGA Logic Analyzer, PEFT Continual Learning Research, and Self-Balancing Robot.">
+  <title>Projects — Muhammad Ahmad</title>
+  <meta name="description" content="Engineering projects and research by Muhammad Ahmad: Reflow Oven Controller, Field-Tracking RC Car, FPGA Logic Analyzer, and PEFT Continual Learning Paper.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- =========================================================================
-       HEADER & NAVIGATION
-       ========================================================================= -->
-  <header class="site-header">
-    <div class="container nav-wrapper">
-      <a href="index.html" class="site-brand">
-        <span class="brand-dot"></span>
-        <span>Muhammad Ahmad</span>
-        <span class="brand-tag">B.A.Sc EE @ UBC</span>
-      </a>
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <div class="container nav-flex">
+      <a href="index.html" class="nav-brand">Muhammad Ahmad</a>
 
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">About</a></li>
-          <li><a href="experience.html" class="nav-link">Experience</a></li>
-          <li><a href="projects.html" class="nav-link active">Projects</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">About</a></li>
+        <li><a href="experience.html" class="nav-link">Experience</a></li>
+        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="assets/resume.pdf" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
 
-      <div class="nav-actions">
-        <a href="assets/resume.pdf" class="btn btn-outline btn-sm btn-mono" target="_blank" rel="noopener noreferrer">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-          Resume
-        </a>
-        <button class="mobile-toggle" aria-label="Toggle navigation menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
+      <button class="mobile-btn" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
     </div>
-  </header>
+  </nav>
 
-  <!-- =========================================================================
-       PAGE CONTENT
-       ========================================================================= -->
+  <!-- PROJECTS CONTENT -->
   <main class="container">
-    <div class="page-header">
-      <div class="section-label">Engineering Showcase</div>
-      <h1 class="hero-title">Technical Projects & Research</h1>
-      <p class="hero-subtitle">
-        A curated showcase of embedded firmware, digital logic FPGA architectures, analog circuit designs, and continual machine learning research.
-      </p>
-    </div>
-
-    <!-- FILTER BUTTONS -->
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="embedded">Embedded & Firmware</button>
-      <button class="filter-btn" data-filter="fpga">FPGA & Digital Logic</button>
-      <button class="filter-btn" data-filter="robotics">Robotics & Control</button>
-      <button class="filter-btn" data-filter="research">Research & AI</button>
+    <div class="page-intro">
+      <h1>Projects &amp; Research</h1>
+      <p>A selection of embedded systems, digital logic architectures, and machine learning research.</p>
     </div>
 
     <!-- =======================================================================
          PROJECT 1: REFLOW OVEN CONTROLLER
          ======================================================================= -->
-    <article class="project-card" id="reflow-oven" data-category="embedded">
-      <div class="project-header">
-        <div class="project-title-group">
-          <div class="project-date">Embedded Systems &bull; Assembly &amp; C</div>
-          <h2 class="project-title">Reflow Oven Controller</h2>
-          <div class="project-chips">
-            <span class="badge badge-chip">CV-8052 Microcontroller</span>
-            <span class="badge badge-chip">Assembly 8052</span>
-            <span class="badge badge-chip">K-Type Thermocouple</span>
-            <span class="badge badge-chip">SSR PWM Control</span>
-            <span class="badge badge-chip">Python Telemetry</span>
-            <span class="badge badge-chip">Op-Amp Signal Conditioning</span>
-          </div>
+    <article class="project-entry" id="reflow-oven">
+      <div class="project-heading">
+        <h2 class="project-name">Reflow Oven Controller</h2>
+        <div class="project-tools">CV-8052 Microcontroller &bull; Assembly &bull; K-Type Thermocouple &bull; Solid-State Relay (SSR) &bull; Python</div>
+      </div>
+
+      <!-- MEDIA GRID (PHOTO + VIDEO SLOTS) -->
+      <div class="project-media-grid">
+        <!-- Photo Placeholder -->
+        <!-- Replace below with: <div class="media-box"><img src="assets/projects/reflow_oven.jpg" alt="Reflow Oven Controller Setup"></div> -->
+        <div class="media-box">
+          <div>[ Picture Space ]</div>
+          <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop reflow_oven.jpg into assets/projects/</div>
         </div>
-        <div class="metrics-row">
-          <div class="metric-badge">
-            <span class="metric-val">&plusmn;2.998&deg;C</span>
-            <span class="metric-label">Max Temperature Error</span>
-          </div>
-          <div class="metric-badge">
-            <span class="metric-val">1500 W</span>
-            <span class="metric-label">Oven Power Regulated</span>
+
+        <!-- Video Placeholder -->
+        <!-- Replace inner container with: <iframe src="YOUR_EMBED_URL" allowfullscreen></iframe> or <video controls src="assets/projects/reflow.mp4"></video> -->
+        <div class="video-box">
+          <div class="video-box-placeholder">
+            <div>[ Video / Demo Space ]</div>
+            <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Insert video embed or link</div>
           </div>
         </div>
       </div>
 
-      <div class="project-body">
-        <!-- LEFT COLUMN: WRITE-UP & TECHNICAL SPECS -->
-        <div class="project-info">
-          <p class="project-overview-text">
-            The Reflow Oven Controller is an embedded system designed to solder surface-mount devices (SMDs) onto printed circuit boards. Built around a CV-8052 microcontroller, the system regulates a 1500 W toaster oven to execute a multi-stage thermal profile while enforcing rigorous hardware safety constraints.
-          </p>
+      <!-- WRITE-UP -->
+      <div class="project-description">
+        <p>
+          The Reflow Oven Controller is an embedded system designed to solder surface-mount devices (SMDs) onto printed circuit boards. Built around a CV-8052 microcontroller, the system regulates a 1500 W toaster oven to execute a multi-stage thermal profile while enforcing strict safety constraints.
+        </p>
 
-          <!-- Hardware Architecture -->
-          <div class="spec-box">
-            <div class="spec-box-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-                <rect x="9" y="9" width="6" height="6"></rect>
-              </svg>
-              Hardware Design & Architecture
-            </div>
-            <ul class="spec-list">
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Temperature Sensing:</strong> Utilizes a K-type thermocouple amplified by an analog op-amp conditioning circuit feeding voltage directly to the microcontroller's ADC.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Thermal Power Control:</strong> A solid-state relay (SSR) receives pulse-width modulation (PWM) signals to regulate average oven heating power.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>User Interface:</strong> Integrated 16x2 LCD, 4x4 matrix keypad, control switches, and a 7-segment display for immediate real-time temperature readouts.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Safety Sensing:</strong> Onboard accelerometer detects physical disturbances, bumps, or oven tipping to prevent hazards.</div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Software & Firmware Design -->
-          <div class="spec-box">
-            <div class="spec-box-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-              Firmware & Software Architecture (Assembly)
-            </div>
-            <ul class="spec-list">
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Interrupt-Driven Scheduler:</strong> 1 ms hardware timer manages PWM signal generation, elapsed time tracking, and display refreshes without blocking the main control loop.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Finite State Machine (FSM):</strong> Orchestrates the full reflow cycle across 6 discrete states: <em>Idle, Preheat, Soak, Reflow Ramp, Hold, Cool, and Error</em>.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Digital Noise Filtering:</strong> Multi-sample averaging filter smooths ADC raw telemetry to mitigate electrical noise prior to temperature calculations.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Safety Aborts:</strong> Automatic hardware disable if the oven tilts, is manually aborted, or fails to cross 50&deg;C within 60 seconds.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Telemetry & Reporting:</strong> Streams real-time serial telemetry to a Python web interface plotting the reflow curve, with automated post-cycle PDF report generation emailed to the user.</div>
-              </li>
-            </ul>
-          </div>
+        <div class="project-section-block">
+          <div class="project-section-label">Hardware Design</div>
+          <ul class="clean-list">
+            <li><strong>Temperature Sensing:</strong> Utilizes a K-type thermocouple amplified by an op-amp circuit feeding voltage to the microcontroller's ADC.</li>
+            <li><strong>Thermal Control:</strong> A solid-state relay (SSR) receives pulse-width modulation (PWM) signals to regulate average oven power.</li>
+            <li><strong>User Interface:</strong> Includes an LCD, a keypad, switches, and a 7-segment display for temperature readouts.</li>
+            <li><strong>Safety Sensing:</strong> Incorporates an onboard accelerometer to detect physical disturbances or tipping.</li>
+          </ul>
         </div>
 
-        <!-- RIGHT COLUMN: MEDIA & VIDEO PLACEHOLDERS -->
-        <div class="project-media-column">
-          <!-- Image Space (User can drop image file into assets/projects/) -->
-          <!-- 
-            TO INSERT IMAGE: Replace the .media-placeholder-container with:
-            <div class="media-container">
-              <img src="assets/projects/reflow_oven.jpg" alt="Reflow Oven Controller Hardware Setup">
-            </div>
-          -->
-          <div class="media-placeholder-container">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-            <div class="media-slot-label">[ Project Photo Space ]</div>
-            <div class="media-slot-hint">Hardware setup: Breadboard, CV-8052/DE10-Lite, LCD, Keypad &amp; 7-Segment display</div>
-          </div>
+        <div class="project-section-block">
+          <div class="project-section-label">Software Design (Assembly)</div>
+          <ul class="clean-list">
+            <li><strong>Interrupt-Driven Scheduler:</strong> A 1 ms hardware timer manages PWM generation, time tracking, and display updates without blocking the control loop.</li>
+            <li><strong>Finite State Machine (FSM):</strong> Orchestrates the reflow cycle through six states: idle, preheat, soak, reflow ramp, hold, cool, and error.</li>
+            <li><strong>Digital Filtering:</strong> Averages multiple ADC readings to mitigate electrical noise before calculating temperature.</li>
+            <li><strong>Non-Blocking Audio:</strong> Uses an independent timer to generate audible feedback without freezing control logic.</li>
+          </ul>
+        </div>
 
-          <!-- Video / Demo Space -->
-          <!-- 
-            TO INSERT VIDEO: Replace inner container with:
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
-            or <video controls src="assets/projects/reflow_demo.mp4"></video>
-          -->
-          <div class="video-container">
-            <div class="video-placeholder-inner">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); margin-bottom: 0.5rem;">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polygon points="10 8 16 12 10 16 10 8"></polygon>
-              </svg>
-              <div class="media-slot-label">[ Video Demo Container ]</div>
-              <div class="media-slot-hint">Ready for embedded video demonstration or Google Drive preview link</div>
-            </div>
-          </div>
+        <div class="project-section-block">
+          <div class="project-section-label">Key Features &amp; Telemetry</div>
+          <ul class="clean-list">
+            <li><strong>Accuracy:</strong> Maintains temperature tolerance with a maximum error of 2.998&deg;C across the 22&deg;C to 240&deg;C range.</li>
+            <li><strong>Safety Aborts:</strong> Automatically disables heating if the oven is tilted, manually stopped, or fails to reach 50&deg;C within 60 seconds.</li>
+            <li><strong>Telemetry Dashboard &amp; Reporting:</strong> Streams serial data to a Python web interface displaying a real-time plot of the reflow curve, and automatically generates and emails a PDF run report upon cycle completion.</li>
+          </ul>
         </div>
       </div>
 
-      <!-- PROJECT FOOTER ACTIONS -->
-      <div class="project-actions">
-        <div class="action-links">
-          <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-mono">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-            GitHub Repository
-          </a>
-          <a href="#" class="btn btn-outline btn-sm btn-mono" onclick="alert('Video demo placeholder. Update link to your video!'); return false;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3"></polygon>
-            </svg>
-            Watch Demo
-          </a>
-        </div>
-        <span class="badge badge-mono">Status: Completed &amp; Verified</span>
+      <div class="project-footer-links">
+        <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">GitHub Repository &rarr;</a>
       </div>
     </article>
 
 
     <!-- =======================================================================
-         PROJECT 2: FIELD-TRACKING AUTONOMOUS RC CAR
+         PROJECT 2: FIELD-TRACKING RC CAR
          ======================================================================= -->
-    <article class="project-card" id="rc-car" data-category="embedded robotics">
-      <div class="project-header">
-        <div class="project-title-group">
-          <div class="project-date">Robotics &amp; Control &bull; Bare-Metal C</div>
-          <h2 class="project-title">Magnetic Field-Controlled Autonomous RC Car</h2>
-          <div class="project-chips">
-            <span class="badge badge-chip">STM32</span>
-            <span class="badge badge-chip">PIC32</span>
-            <span class="badge badge-chip">EFM8</span>
-            <span class="badge badge-chip">Inductor Array Sensing</span>
-            <span class="badge badge-chip">VL53L0X ToF (I2C)</span>
-            <span class="badge badge-chip">PID Cruise Control</span>
-            <span class="badge badge-chip">Discrete H-Bridges</span>
-            <span class="badge badge-chip">38kHz IR Remote</span>
-          </div>
+    <article class="project-entry" id="rc-car">
+      <div class="project-heading">
+        <h2 class="project-name">Line-Following / Field-Tracking RC Car</h2>
+        <div class="project-tools">EFM8 &bull; STM32 &bull; PIC32 &bull; C &bull; Inductive Sensor Array &bull; VL53L0X ToF &bull; IR Communication</div>
+      </div>
+
+      <!-- MEDIA GRID -->
+      <div class="project-media-grid">
+        <!-- Photo Placeholder -->
+        <!-- Replace below with: <div class="media-box"><img src="assets/projects/rc_car.jpg" alt="RC Car Setup"></div> -->
+        <div class="media-box">
+          <div>[ Picture Space ]</div>
+          <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop rc_car.jpg into assets/projects/</div>
         </div>
-        <div class="metrics-row">
-          <div class="metric-badge">
-            <span class="metric-val">100 mm</span>
-            <span class="metric-label">Target Obstacle Buffer</span>
-          </div>
-          <div class="metric-badge">
-            <span class="metric-val">3 MCUs</span>
-            <span class="metric-label">Distributed Processing</span>
+
+        <!-- Video Placeholder -->
+        <div class="video-box">
+          <div class="video-box-placeholder">
+            <div>[ Video / Demo Space ]</div>
+            <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Insert video embed or Google Drive link</div>
           </div>
         </div>
       </div>
 
-      <div class="project-body">
-        <!-- LEFT COLUMN: WRITE-UP & TECHNICAL SPECS -->
-        <div class="project-info">
-          <p class="project-overview-text">
-            The Field Tracking Robot is an embedded robotic platform capable of both manual infrared (IR) remote navigation and autonomous electromagnetic guide-wire tracking. The vehicle dynamically detects magnetic fields radiated by energized guide wires, executes programmed path decisions at wire intersections, and enforces automatic collision mitigation.
-          </p>
+      <!-- WRITE-UP -->
+      <div class="project-description">
+        <p>
+          The Field Tracking Robot is an embedded system capable of manual and autonomous navigation. The vehicle detects and follows magnetic fields generated by an energized guide wire, executes pre-programmed path decisions at intersections, and responds to infrared (IR) remote commands.
+        </p>
 
-          <!-- Hardware Architecture -->
-          <div class="spec-box">
-            <div class="spec-box-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-                <rect x="9" y="9" width="6" height="6"></rect>
-              </svg>
-              Distributed Hardware Architecture
-            </div>
-            <ul class="spec-list">
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Multi-MCU Processing:</strong> An <strong>EFM8</strong> drives motor logic and inductive navigation; an <strong>STM32</strong> processes joystick inputs on the remote controller; a <strong>PIC32</strong> controls an isolated servo lifting mechanism.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Magnetic Sensors:</strong> 3 tuned inductive coils with op-amp signal conditioning detect guide-wire magnetic fields for differential steering.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Distance Sensing:</strong> VL53L0X Time-of-Flight (ToF) laser sensor interfaced over I2C for millimetric obstacle detection.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Actuation &amp; Comms:</strong> Discrete MOSFET-based H-bridges drive bidirectional DC motors; MOSFET-driven IR LED transmits 38 kHz modulated command packets.</div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Software & Firmware Design -->
-          <div class="spec-box">
-            <div class="spec-box-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-              Bare-Metal Firmware Architecture (C)
-            </div>
-            <ul class="spec-list">
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Movement FSM:</strong> State machine translates locomotion states into high-resolution PWM duty cycles for bidirectional motor control.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Threshold Navigation:</strong> Compares left and right inductor ADC voltages to maintain precise center-wire alignment; middle inductor triggers intersection path branches.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>PID Cruise Control:</strong> Proportional-Integral-Derivative control loop dynamically modulates motor PWM based on ToF telemetry to maintain a constant 100 mm trailing distance.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Feedback &amp; Safety:</strong> Hardware battery voltage monitoring LEDs, directional turn blinkers, audio alerts, and terrain servo traversal.</div>
-              </li>
-            </ul>
-          </div>
+        <div class="project-section-block">
+          <div class="project-section-label">Hardware Design</div>
+          <ul class="clean-list">
+            <li><strong>Processing:</strong> An EFM8 microcontroller drives the robot, an STM32 microcontroller manages the remote controller, and a PIC32 microcontroller controls a servo-based lifting mechanism on the RC car.</li>
+            <li><strong>Sensors:</strong> Three inductive coils, amplified by op-amps, detect the magnetic guide wire. A VL53L0X Time-of-Flight (ToF) sensor measures obstacle distance over I2C.</li>
+            <li><strong>Actuation:</strong> Discrete MOSFET-based H-bridges drive bidirectional motor movement.</li>
+            <li><strong>Communication:</strong> A MOSFET-driven IR LED transmits 38 kHz modulated signals from the remote.</li>
+          </ul>
         </div>
 
-        <!-- RIGHT COLUMN: MEDIA & VIDEO PLACEHOLDERS -->
-        <div class="project-media-column">
-          <!-- Image Space -->
-          <!-- 
-            TO INSERT IMAGE: Replace placeholder with:
-            <div class="media-container">
-              <img src="assets/projects/rc_car.jpg" alt="Magnetic Field-Tracking RC Car Prototype">
-            </div>
-          -->
-          <div class="media-placeholder-container">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-            <div class="media-slot-label">[ Project Photo Space ]</div>
-            <div class="media-slot-hint">RC car chassis, inductor array, breadboard circuitry, and track layout</div>
-          </div>
+        <div class="project-section-block">
+          <div class="project-section-label">Software Design (Bare-Metal C)</div>
+          <ul class="clean-list">
+            <li><strong>Control Logic:</strong> A finite state machine (FSM) maps movement states to pulse-width modulation (PWM) outputs for motor control.</li>
+            <li><strong>Navigation:</strong> A threshold-based algorithm compares left and right inductor ADC readings to maintain wire alignment. The middle inductor triggers intersection path sequences.</li>
+            <li><strong>Speed Regulation:</strong> A Proportional-Integral-Derivative (PID) controller dynamically adjusts motor PWM based on ToF sensor data to maintain a target 100 mm following distance.</li>
+            <li><strong>Communication:</strong> Timer interrupts generate PWM for IR transmission, while UART decoding translates received commands.</li>
+          </ul>
+        </div>
 
-          <!-- Video / Demo Space -->
-          <div class="video-container">
-            <div class="video-placeholder-inner">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); margin-bottom: 0.5rem;">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polygon points="10 8 16 12 10 16 10 8"></polygon>
-              </svg>
-              <div class="media-slot-label">[ Google Drive / Video Demo Space ]</div>
-              <div class="media-slot-hint">Slot ready for Google Drive video or YouTube live track demonstration</div>
-            </div>
-          </div>
+        <div class="project-section-block">
+          <div class="project-section-label">Features</div>
+          <ul class="clean-list">
+            <li><strong>Navigation Modes:</strong> Operates in manual remote-control mode or autonomous guide-wire tracking mode with intersection path selection.</li>
+            <li><strong>Cruise Control &amp; Safety:</strong> PID cruise control maintaining a 100 mm buffer from obstacles; supports forward, reverse, pivot, and fine-grained adjustments.</li>
+            <li><strong>Feedback &amp; Terrain:</strong> Battery voltage monitoring LEDs, directional blinkers, audio alerts, and an isolated servo mechanism to traverse uneven surfaces.</li>
+          </ul>
         </div>
       </div>
 
-      <!-- PROJECT FOOTER ACTIONS -->
-      <div class="project-actions">
-        <div class="action-links">
-          <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-mono">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-            GitHub Repository
-          </a>
-          <a href="#" class="btn btn-outline btn-sm btn-mono" onclick="alert('Google Drive demo video placeholder. Link your video!'); return false;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3"></polygon>
-            </svg>
-            Google Drive Demo
-          </a>
-        </div>
-        <span class="badge badge-mono">Status: Tested &amp; Field Verified</span>
+      <div class="project-footer-links">
+        <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">GitHub Repository &rarr;</a>
       </div>
     </article>
 
 
     <!-- =======================================================================
-         PROJECT 3: MULTI-PROTOCOL FPGA DIGITAL LOGIC ANALYZER
+         PROJECT 3: MULTI-PROTOCOL FPGA LOGIC ANALYZER
          ======================================================================= -->
-    <article class="project-card" id="logic-analyzer" data-category="fpga embedded">
-      <div class="project-header">
-        <div class="project-title-group">
-          <div class="project-date">FPGA &amp; Digital Design &bull; SystemVerilog</div>
-          <h2 class="project-title">Multi-Protocol Digital Logic Analyzer</h2>
-          <div class="project-chips">
-            <span class="badge badge-chip">Intel MAX 10 FPGA (DE10-Lite)</span>
-            <span class="badge badge-chip">SystemVerilog</span>
-            <span class="badge badge-chip">QuestaSim</span>
-            <span class="badge badge-chip">SPI / I2C / UART</span>
-            <span class="badge badge-chip">Asynchronous FIFO</span>
-            <span class="badge badge-chip">16x Oversampling</span>
-            <span class="badge badge-chip">ESP32 Testbench</span>
-            <span class="badge badge-chip">Python Telemetry</span>
-          </div>
+    <article class="project-entry" id="logic-analyzer">
+      <div class="project-heading">
+        <h2 class="project-name">Multi-Protocol Digital Logic Analyzer</h2>
+        <div class="project-tools">Intel DE10-Lite FPGA (MAX 10) &bull; SystemVerilog &bull; QuestaSim &bull; SPI &bull; I2C &bull; UART &bull; Python</div>
+      </div>
+
+      <!-- MEDIA GRID -->
+      <div class="project-media-grid">
+        <!-- Photo Placeholder -->
+        <!-- Replace below with: <div class="media-box"><img src="assets/projects/logic_analyzer.jpg" alt="FPGA Setup"></div> -->
+        <div class="media-box">
+          <div>[ Picture Space ]</div>
+          <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop logic_analyzer.jpg into assets/projects/</div>
         </div>
-        <div class="metrics-row">
-          <div class="metric-badge">
-            <span class="metric-val">16x</span>
-            <span class="metric-label">Sampling Resolution</span>
-          </div>
-          <div class="metric-badge">
-            <span class="metric-val">3 Protocols</span>
-            <span class="metric-label">SPI, I2C &amp; UART</span>
+
+        <!-- Video Placeholder -->
+        <div class="video-box">
+          <div class="video-box-placeholder">
+            <div>[ Video / Demo Space ]</div>
+            <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Insert video embed or link</div>
           </div>
         </div>
       </div>
 
-      <div class="project-body">
-        <!-- LEFT COLUMN: WRITE-UP & TECHNICAL SPECS -->
-        <div class="project-info">
-          <p class="project-overview-text">
-            The Logic Analyzer is a dedicated hardware measurement instrument synthesized on the Intel MAX 10 (DE10-Lite) FPGA to capture, buffer, and decode high-speed SPI, I2C, and UART serial communication streams. Synthesized hardware modules handle asynchronous clock-domain crossings and transmit parsed telemetry to a host workstation.
-          </p>
+      <!-- WRITE-UP -->
+      <div class="project-description">
+        <p>
+          The Logic Analyzer is a hardware tool built on the Intel DE10-Lite FPGA to capture and decode SPI, I2C, and UART serial communication protocols. The system processes incoming signals, buffers the data, and transmits it to a host PC for monitoring and analysis.
+        </p>
 
-          <!-- Hardware & Logic Design -->
-          <div class="spec-box">
-            <div class="spec-box-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-                <rect x="9" y="9" width="6" height="6"></rect>
-              </svg>
-              Hardware &amp; Digital Architecture
-            </div>
-            <ul class="spec-list">
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>FPGA Platform:</strong> Synthesized on the Intel Altera MAX 10 (DE10-Lite) FPGA board.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Signal Generator Testbench:</strong> Built an ESP32 hardware harness to inject known SPI, I2C, and UART waveforms for hardware validation.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>State Machines &amp; Oversampling:</strong> SystemVerilog FSMs implement 16x oversampling clock generators to capture noisy, jittery incoming asynchronous serial signals reliably.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Memory Architecture:</strong> Implemented hardware FIFO buffers to capture and queue decoded protocol frames across asynchronous clock domains without data drops.</div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Simulation & Verification -->
-          <div class="spec-box">
-            <div class="spec-box-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-              Verification &amp; PC Telemetry
-            </div>
-            <ul class="spec-list">
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>QuestaSim Testbenches:</strong> Verified and debugged complex edge cases, frame timing, and parity checks in simulation prior to hardware synthesis.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>On-Board Visualization:</strong> 7-segment displays show active decoded protocol identifiers and live data byte readouts.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Python PC Telemetry:</strong> Custom Python script reads serial streams via UART, parsing and printing structured communication packets in real time.</div>
-              </li>
-            </ul>
-          </div>
+        <div class="project-section-block">
+          <div class="project-section-label">Design &amp; Architecture</div>
+          <ul class="clean-list">
+            <li><strong>Processing Platform:</strong> Synthesized on the Intel DE10-Lite FPGA board.</li>
+            <li><strong>Signal Source &amp; Validation:</strong> Tested and validated using an ESP32 microcontroller to generate SPI, I2C, and UART test signals.</li>
+            <li><strong>State Machines &amp; Oversampling:</strong> SystemVerilog finite state machines (FSMs) utilize 16x oversampling to decode incoming serial data streams reliably.</li>
+            <li><strong>Data Management:</strong> A hardware FIFO buffer stores decoded data packets to prevent data loss prior to transmission across asynchronous clock domains.</li>
+            <li><strong>Verification:</strong> Hardware modules were simulated, timing-verified, and debugged using QuestaSim.</li>
+          </ul>
         </div>
 
-        <!-- RIGHT COLUMN: MEDIA & VIDEO PLACEHOLDERS -->
-        <div class="project-media-column">
-          <!-- Image Space -->
-          <div class="media-placeholder-container">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-            <div class="media-slot-label">[ DE10-Lite FPGA Photo Space ]</div>
-            <div class="media-slot-hint">Intel MAX 10 FPGA setup with 7-segment display readouts &amp; probe wiring</div>
-          </div>
-
-          <!-- Video / Demo Space -->
-          <div class="video-container">
-            <div class="video-placeholder-inner">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); margin-bottom: 0.5rem;">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polygon points="10 8 16 12 10 16 10 8"></polygon>
-              </svg>
-              <div class="media-slot-label">[ Logic Analyzer Demo Video ]</div>
-              <div class="media-slot-hint">Space reserved for oscilloscope capture or terminal packet demo video</div>
-            </div>
-          </div>
+        <div class="project-section-block">
+          <div class="project-section-label">Features &amp; Telemetry</div>
+          <ul class="clean-list">
+            <li><strong>Multi-Protocol Decoding:</strong> Configurable hardware decoding for SPI, I2C, and UART protocols.</li>
+            <li><strong>User Interface:</strong> 7-segment displays provide real-time visual indication of the active protocols and decoded data.</li>
+            <li><strong>PC Telemetry:</strong> A Python script reads the serial data via UART and parses communication packets for terminal display.</li>
+          </ul>
         </div>
       </div>
 
-      <!-- PROJECT FOOTER ACTIONS -->
-      <div class="project-actions">
-        <div class="action-links">
-          <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-mono">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-            GitHub HDL Code
-          </a>
-          <a href="#" class="btn btn-outline btn-sm btn-mono" onclick="alert('Video placeholder. Attach your logic analyzer demo video!'); return false;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3"></polygon>
-            </svg>
-            Watch Demo
-          </a>
-        </div>
-        <span class="badge badge-mono">Tool: QuestaSim &bull; Quartus Prime</span>
+      <div class="project-footer-links">
+        <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">GitHub HDL Code &rarr;</a>
       </div>
     </article>
 
@@ -523,290 +241,73 @@
     <!-- =======================================================================
          PROJECT 4: RESEARCH PAPER - CATASTROPHIC FORGETTING IN PEFT
          ======================================================================= -->
-    <article class="project-card" id="peft-paper" data-category="research">
-      <div class="project-header">
-        <div class="project-title-group">
-          <div class="project-date">Machine Learning Research &bull; arXiv: 2603.09684v1</div>
-          <h2 class="project-title">On Catastrophic Forgetting in Low-Rank Decomposition-Based PEFT</h2>
-          <div class="project-chips">
-            <span class="badge badge-chip">Vision Transformers (ViT)</span>
-            <span class="badge badge-chip">LoRA / PiSSA / LoRETTA / WeGeFT</span>
-            <span class="badge badge-chip">Continual Learning</span>
-            <span class="badge badge-chip">Hugging Face</span>
-            <span class="badge badge-chip">PyTorch</span>
-            <span class="badge badge-chip">UBC Yankai Group</span>
-          </div>
+    <article class="project-entry" id="peft-paper">
+      <div class="project-heading">
+        <h2 class="project-name">On Catastrophic Forgetting in Low-Rank Decomposition-Based PEFT</h2>
+        <div class="project-tools">Research Paper &bull; arXiv: 2603.09684 &bull; Vision Transformers (ViT) &bull; LoRA &bull; PiSSA &bull; LoRETTA &bull; WeGeFT</div>
+      </div>
+
+      <!-- MEDIA GRID -->
+      <div class="project-media-grid">
+        <!-- Photo Placeholder -->
+        <!-- Replace below with: <div class="media-box"><img src="assets/projects/paper_preview.jpg" alt="Paper PDF Preview"></div> -->
+        <div class="media-box">
+          <div>[ Picture / Paper PDF Space ]</div>
+          <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop paper_preview.jpg into assets/projects/</div>
         </div>
-        <div class="metrics-row">
-          <div class="metric-badge">
-            <span class="metric-val">4 PEFT</span>
-            <span class="metric-label">Methods Evaluated</span>
-          </div>
-          <div class="metric-badge">
-            <span class="metric-val">4 Benchmarks</span>
-            <span class="metric-label">Sequential Vision Tasks</span>
+
+        <!-- Video Placeholder -->
+        <div class="video-box">
+          <div class="video-box-placeholder">
+            <div>[ Video / Demo Space ]</div>
+            <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Insert presentation / demo link</div>
           </div>
         </div>
       </div>
 
-      <div class="project-body">
-        <!-- LEFT COLUMN: WRITE-UP & TECHNICAL SPECS -->
-        <div class="project-info">
-          <p class="project-overview-text">
-            <strong>Authors:</strong> Muhammad Ahmad, Jingjing Zheng, Yankai Cao (University of British Columbia).<br><br>
-            Developed in collaboration with a PhD student, this research paper investigates catastrophic forgetting in low-rank decomposition-based Parameter-Efficient Fine-Tuning (PEFT) methods under continual learning settings. It explores how constraining model updates to low-dimensional subspaces influences task interference and representation retention across sequential computer vision tasks.
-          </p>
+      <!-- WRITE-UP -->
+      <div class="project-description">
+        <p>
+          <em>Muhammad Ahmad, Jingjing Zheng, Yankai Cao (University of British Columbia).</em><br><br>
+          Developed in collaboration with a PhD student, this research paper investigates catastrophic forgetting in low-rank decomposition-based Parameter-Efficient Fine-Tuning (PEFT) methods under continual learning settings. It explores how constraining model updates to low-dimensional subspaces influences task interference and knowledge retention across sequential computer vision tasks.
+        </p>
 
-          <!-- Methodology & Setup -->
-          <div class="spec-box">
-            <div class="spec-box-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 6v6l4 2"></path>
-              </svg>
-              Methodology &amp; Experimental Setup
-            </div>
-            <ul class="spec-list">
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Backbone Architectures:</strong> Evaluated on Vision Transformers (ViT-Base and ViT-Large) pretrained on ImageNet-1K.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>PEFT Strategies:</strong> Full Fine-Tuning benchmarked against four parameter-efficient methods: <strong>LoRA</strong>, <strong>PiSSA</strong>, <strong>LoRETTA</strong>, and <strong>WeGeFT</strong>.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Sequential Benchmarks:</strong> Evaluated across CUB-200-2011, EuroSAT, Intel Image Classification, and Sports Image Classification via automated Python/Bash pipelines.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Evaluation Metrics:</strong> Measured using Chaudhry's average forgetting metric, per-task accuracy, and final retention accuracy.</div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Key Findings -->
-          <div class="spec-box">
-            <div class="spec-box-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-              </svg>
-              Key Theoretical &amp; Empirical Findings
-            </div>
-            <ul class="spec-list">
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Matrix Rank Trade-offs:</strong> Standard LoRA exhibits higher forgetting at small ranks due to forced shared directions; higher ranks steadily reduce task interference.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Principal Subspace Interference:</strong> PiSSA causes acute forgetting at low ranks by directly perturbing principal singular vectors containing shared features.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Structural Alignment &amp; Tensor Benefits:</strong> Structurally aligned methods (WeGeFT) and tensor-train decompositions (LoRETTA) minimize forgetting with minimal parameter budgets.</div>
-              </li>
-            </ul>
-          </div>
+        <div class="project-section-block">
+          <div class="project-section-label">Methodology &amp; Experimental Setup</div>
+          <ul class="clean-list">
+            <li><strong>Model Architecture:</strong> Utilizes Vision Transformers (ViT-Base and ViT-Large) pretrained on ImageNet-1K as the base backbones.</li>
+            <li><strong>Fine-Tuning Framework:</strong> Evaluates Full Fine-Tuning against four PEFT strategies: LoRA, PiSSA, LoRETTA, and WeGeFT implemented via Hugging Face.</li>
+            <li><strong>Execution &amp; Automation:</strong> Evaluated across sequential vision tasks (CUB-200-2011, EuroSAT, Intel Image Classification, and Sports Image Classification) using automated Python and Bash execution pipelines.</li>
+            <li><strong>Evaluation Metrics:</strong> Assesses performance via Chaudhry's average forgetting metric, per-task accuracy, and final average accuracy across sequential tasks.</li>
+          </ul>
         </div>
 
-        <!-- RIGHT COLUMN: MEDIA & PAPER PREVIEW -->
-        <div class="project-media-column">
-          <!-- Paper PDF / First Page Space -->
-          <div class="media-placeholder-container">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
-            <div class="media-slot-label">[ Research Paper Cover &amp; Figures ]</div>
-            <div class="media-slot-hint">Space for arXiv paper first page screenshot or architecture diagrams</div>
-          </div>
-
-          <!-- Video / Presentation Slot -->
-          <div class="video-container">
-            <div class="video-placeholder-inner">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); margin-bottom: 0.5rem;">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polygon points="10 8 16 12 10 16 10 8"></polygon>
-              </svg>
-              <div class="media-slot-label">[ Paper Walkthrough / Demo ]</div>
-              <div class="media-slot-hint">Space for research presentation recording or slide deck walkthrough</div>
-            </div>
-          </div>
+        <div class="project-section-block">
+          <div class="project-section-label">Key Findings</div>
+          <ul class="clean-list">
+            <li><strong>Matrix Rank Trade-offs:</strong> Standard LoRA exhibits higher forgetting at small ranks due to forced shared directions, whereas higher ranks steadily decrease forgetting.</li>
+            <li><strong>Principal Subspace Interference:</strong> PiSSA causes significant forgetting at low ranks by directly updating the principal singular vectors encoding shared representations.</li>
+            <li><strong>Structural Alignment &amp; Tensor Benefits:</strong> Structurally aligned methods (WeGeFT) and tensor-train decompositions (LoRETTA) minimize forgetting with minimal parameter budgets.</li>
+          </ul>
         </div>
       </div>
 
-      <!-- PROJECT FOOTER ACTIONS -->
-      <div class="project-actions">
-        <div class="action-links">
-          <a href="https://arxiv.org/abs/2603.09684" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-mono">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-            Read on arXiv
-          </a>
-          <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm btn-mono">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-            Benchmarking Code
-          </a>
-        </div>
-        <span class="badge badge-mono">UBC Yankai Lab</span>
-      </div>
-    </article>
-
-
-    <!-- =======================================================================
-         PROJECT 5: TWO-WHEELED SELF-BALANCING ROBOT
-         ======================================================================= -->
-    <article class="project-card" id="balancing-robot" data-category="robotics embedded">
-      <div class="project-header">
-        <div class="project-title-group">
-          <div class="project-date">Robotics &amp; Control &bull; C / C++</div>
-          <h2 class="project-title">Two-Wheeled Self-Balancing Robot</h2>
-          <div class="project-chips">
-            <span class="badge badge-chip">ESP32</span>
-            <span class="badge badge-chip">MPU-6050 IMU</span>
-            <span class="badge badge-chip">Kalman Filter</span>
-            <span class="badge badge-chip">PID Control</span>
-            <span class="badge badge-chip">NEMA 17 Steppers</span>
-            <span class="badge badge-chip">DRV8825 Drivers</span>
-            <span class="badge badge-chip">I2C</span>
-          </div>
-        </div>
-        <div class="metrics-row">
-          <div class="metric-badge">
-            <span class="metric-val">Kalman</span>
-            <span class="metric-label">Sensor Fusion</span>
-          </div>
-          <div class="metric-badge">
-            <span class="metric-val">High-Hz PID</span>
-            <span class="metric-label">Equilibrium Loop</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-body">
-        <!-- LEFT COLUMN: WRITE-UP & TECHNICAL SPECS -->
-        <div class="project-info">
-          <p class="project-overview-text">
-            Engineered and programmed an inverted-pendulum self-balancing robotic platform powered by an ESP32 microcontroller. The robot achieves upright equilibrium by executing continuous real-time sensor fusion and high-frequency closed-loop PID motor corrections.
-          </p>
-
-          <!-- Dynamics & Sensor Fusion -->
-          <div class="spec-box">
-            <div class="spec-box-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 2v20M2 12h20"></path>
-              </svg>
-              Sensor Fusion &amp; Control Engineering
-            </div>
-            <ul class="spec-list">
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Kalman Filtering:</strong> Implemented a 1D Kalman filter performing sensor fusion on raw accelerometer and gyroscope data from an MPU-6050 6-DOF IMU over I2C, eliminating drift and motor vibration noise for stable pitch angle tracking.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>PID Control Loop:</strong> Tuned a responsive Proportional-Integral-Derivative control algorithm to counteract dynamic tipping moments and maintain vertical center of gravity.</div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Actuation Architecture -->
-          <div class="spec-box">
-            <div class="spec-box-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-                <rect x="9" y="9" width="6" height="6"></rect>
-              </svg>
-              Actuation &amp; Power Subsystem
-            </div>
-            <ul class="spec-list">
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Stepper Drive:</strong> Dual high-torque NEMA 17 stepper motors paired with DRV8825 microstepping drivers for precision angular velocity control.</div>
-              </li>
-              <li class="spec-item">
-                <span class="spec-item-bullet">&bull;</span>
-                <div><strong>Power Integrity:</strong> Isolated power rails with decoupling capacitors to prevent back-EMF spikes from affecting microcontroller operation.</div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- RIGHT COLUMN: MEDIA & VIDEO PLACEHOLDERS -->
-        <div class="project-media-column">
-          <!-- Image Space -->
-          <div class="media-placeholder-container">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-            <div class="media-slot-label">[ Robot Photo Space ]</div>
-            <div class="media-slot-hint">Chassis, ESP32, MPU-6050, and NEMA 17 stepper setup</div>
-          </div>
-
-          <!-- Video / Demo Space -->
-          <div class="video-container">
-            <div class="video-placeholder-inner">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); margin-bottom: 0.5rem;">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polygon points="10 8 16 12 10 16 10 8"></polygon>
-              </svg>
-              <div class="media-slot-label">[ Balancing Demo Video Space ]</div>
-              <div class="media-slot-hint">Space ready for balancing video clip or YouTube embed</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJECT FOOTER ACTIONS -->
-      <div class="project-actions">
-        <div class="action-links">
-          <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-mono">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-            GitHub Repository
-          </a>
-          <a href="#" class="btn btn-outline btn-sm btn-mono" onclick="alert('Video demo placeholder. Attach your balancing demo video!'); return false;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3"></polygon>
-            </svg>
-            Watch Demo
-          </a>
-        </div>
-        <span class="badge badge-mono">Status: Calibrated &amp; Operational</span>
+      <div class="project-footer-links">
+        <a href="https://arxiv.org/abs/2603.09684" target="_blank" rel="noopener noreferrer" class="text-link">Read Paper on arXiv &rarr;</a>
+        <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">Benchmarking Repository &rarr;</a>
       </div>
     </article>
 
   </main>
 
-  <!-- =========================================================================
-       FOOTER
-       ========================================================================= -->
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-wrapper">
-      <div>
-        <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Muhammad Ahmad</div>
-        <div>Electrical & Computer Engineering &bull; University of British Columbia</div>
-      </div>
-      <div class="footer-links">
+    <div class="container footer-flex">
+      <div>Muhammad Ahmad &bull; University of British Columbia</div>
+      <div class="footer-links-clean">
         <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://linkedin.com/in/sulemanahmad2005" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:ahmadsuleman726@gmail.com">Email</a>
-        <a href="assets/resume.pdf" target="_blank">Resume</a>
       </div>
     </div>
   </footer>

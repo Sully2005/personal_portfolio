@@ -3,234 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Experience &amp; Leadership | Muhammad Ahmad</title>
-  <meta name="description" content="Professional engineering experience, research, and leadership of Muhammad Ahmad: Stryker, UBC AgroBot, Yankai Group, and University of British Columbia.">
+  <title>Experience — Muhammad Ahmad</title>
+  <meta name="description" content="Professional experience and education of Muhammad Ahmad: Stryker, UBC AgroBot, Yankai Group, and UBC.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- =========================================================================
-       HEADER & NAVIGATION
-       ========================================================================= -->
-  <header class="site-header">
-    <div class="container nav-wrapper">
-      <a href="index.html" class="site-brand">
-        <span class="brand-dot"></span>
-        <span>Muhammad Ahmad</span>
-        <span class="brand-tag">B.A.Sc EE @ UBC</span>
-      </a>
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <div class="container nav-flex">
+      <a href="index.html" class="nav-brand">Muhammad Ahmad</a>
 
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">About</a></li>
-          <li><a href="experience.html" class="nav-link active">Experience</a></li>
-          <li><a href="projects.html" class="nav-link">Projects</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">About</a></li>
+        <li><a href="experience.html" class="nav-link active">Experience</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="assets/resume.pdf" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
 
-      <div class="nav-actions">
-        <a href="assets/resume.pdf" class="btn btn-outline btn-sm btn-mono" target="_blank" rel="noopener noreferrer">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-          Resume
-        </a>
-        <button class="mobile-toggle" aria-label="Toggle navigation menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
+      <button class="mobile-btn" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
     </div>
-  </header>
+  </nav>
 
-  <!-- =========================================================================
-       PAGE CONTENT
-       ========================================================================= -->
+  <!-- EXPERIENCE CONTENT -->
   <main class="container">
-    <div class="page-header">
-      <div class="section-label">Career &amp; Research</div>
-      <h1 class="hero-title">Experience &amp; Leadership</h1>
-      <p class="hero-subtitle">
-        Hands-on background in embedded testing in medical devices, leading autonomous robotics teams, and conducting machine learning research at UBC.
-      </p>
+    <div class="page-intro">
+      <h1>Experience &amp; Education</h1>
+      <p>Industry experience, student engineering leadership, and academic background.</p>
     </div>
 
-    <!-- WORK EXPERIENCE TIMELINE -->
-    <section class="section-tight">
-      <div class="section-heading">
+    <div class="exp-group">
+
+      <!-- STRYKER -->
+      <article class="exp-item">
+        <div class="exp-time">
+          May 2026 &ndash; Present
+          <span class="exp-location">Vancouver, BC</span>
+        </div>
         <div>
-          <div class="section-label">Industry &amp; Research</div>
-          <h2 class="section-title">Work Experience</h2>
+          <h2 class="exp-title">Embedded Software Test Engineer</h2>
+          <div class="exp-company">Stryker</div>
+          <ul class="exp-bullets">
+            <li>Contributed to a C#-based Automation Cart framework to automate functional testing of medical light source devices, increasing test coverage and reducing manual test execution time.</li>
+            <li>Enhanced the nightly integration testing pipeline by developing Python scripts for automated test execution and Bash scripts to parse, format, and upload validation reports.</li>
+            <li>Conducted electrical verification testing on embedded systems using oscilloscopes and function generators to ensure hardware reliability and signal integrity.</li>
+          </ul>
         </div>
-      </div>
+      </article>
 
-      <div class="timeline">
-
-        <!-- STRYKER -->
-        <article class="timeline-item">
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-role">Embedded Software Test Engineer</h3>
-              <div class="timeline-org">Stryker</div>
-            </div>
-            <div class="timeline-meta">
-              <div>May 2026 &ndash; Present</div>
-              <div>Vancouver, BC</div>
-            </div>
-          </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.75rem 0;">
-            <span class="badge badge-chip">C#</span>
-            <span class="badge badge-chip">Python</span>
-            <span class="badge badge-chip">Bash</span>
-            <span class="badge badge-chip">Oscilloscopes</span>
-            <span class="badge badge-chip">Function Generators</span>
-            <span class="badge badge-chip">Medical Devices</span>
-          </div>
-          <ul class="timeline-bullets">
-            <li>
-              Contributed to a <strong>C#-based Automation Cart framework</strong> to automate functional testing of medical light source devices, substantially increasing test coverage and reducing manual test execution cycles.
-            </li>
-            <li>
-              Enhanced the nightly integration testing pipeline by developing <strong>Python automation scripts</strong> for automated execution and <strong>Bash scripts</strong> to parse, format, and upload validation reports.
-            </li>
-            <li>
-              Conducted rigorous electrical verification testing on embedded hardware using <strong>oscilloscopes and function generators</strong> to ensure signal integrity and hardware reliability under operating conditions.
-            </li>
-          </ul>
-        </article>
-
-        <!-- UBC AGROBOT -->
-        <article class="timeline-item">
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-role">Applied AI Team Lead</h3>
-              <div class="timeline-org">UBC AgroBot (Student Engineering Design Team)</div>
-            </div>
-            <div class="timeline-meta">
-              <div>September 2025 &ndash; Present</div>
-              <div>Vancouver, BC</div>
-            </div>
-          </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.75rem 0;">
-            <span class="badge badge-chip">Team Leadership (10 Engineers)</span>
-            <span class="badge badge-chip">Computer Vision</span>
-            <span class="badge badge-chip">Autonomous Robotics</span>
-            <span class="badge badge-chip">PyTorch</span>
-            <span class="badge badge-chip">Semantic Segmentation</span>
-          </div>
-          <ul class="timeline-bullets">
-            <li>
-              Directed a <strong>10-member multidisciplinary engineering team</strong> in architecting and deploying end-to-end machine learning pipelines for a fully autonomous field agricultural rover.
-            </li>
-            <li>
-              Led the development of a real-time computer vision suite comprising <strong>object detection, image classification, and semantic segmentation models</strong> for field robotic perception and crop health analysis.
-            </li>
-            <li>
-              Managed sprint planning, algorithm benchmarking, and cross-subsystem hardware integration between computer vision models and embedded motor controllers.
-            </li>
-          </ul>
-        </article>
-
-        <!-- YANKAI GROUP RESEARCH -->
-        <article class="timeline-item">
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-role">Research Assistant</h3>
-              <div class="timeline-org">Yankai Group &bull; University of British Columbia</div>
-            </div>
-            <div class="timeline-meta">
-              <div>September 2025 &ndash; April 2026</div>
-              <div>Vancouver, BC</div>
-            </div>
-          </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.75rem 0;">
-            <span class="badge badge-chip">Continual Learning</span>
-            <span class="badge badge-chip">PEFT (LoRA, PiSSA)</span>
-            <span class="badge badge-chip">5B-Param LLMs &amp; ViTs</span>
-            <span class="badge badge-chip">Hugging Face</span>
-            <span class="badge badge-chip">arXiv Co-Author</span>
-          </div>
-          <ul class="timeline-bullets">
-            <li>
-              Conducted experimental research on parameter-efficient fine-tuning (LoRA, PiSSA, LoRETTA, WeGeFT) on large neural backbones, quantifying catastrophic forgetting across sequential task sequences.
-            </li>
-            <li>
-              Designed and implemented a reproducible benchmarking pipeline in <strong>Python using Hugging Face and PyTorch</strong> to evaluate catastrophic forgetting and representation retention across fine-tuning configurations.
-            </li>
-            <li>
-              Analyzed experimental outputs for statistical consistency, identified subspace interference anomalies, and synthesized findings into research publications (co-authored arXiv paper: <em>2603.09684v1</em>).
-            </li>
-          </ul>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- EDUCATION SECTION -->
-    <section class="section">
-      <div class="section-heading">
+      <!-- UBC AGROBOT -->
+      <article class="exp-item">
+        <div class="exp-time">
+          Sep 2025 &ndash; Present
+          <span class="exp-location">Vancouver, BC</span>
+        </div>
         <div>
-          <div class="section-label">Academics</div>
-          <h2 class="section-title">Education &amp; Qualifications</h2>
+          <h2 class="exp-title">Applied AI Team Lead</h2>
+          <div class="exp-company">UBC AgroBot</div>
+          <ul class="exp-bullets">
+            <li>Directed a 10-member engineering team in designing and deploying end-to-end machine learning pipelines for a fully autonomous agricultural rover.</li>
+            <li>Led the development of a comprehensive computer vision suite including object detection, image classification, and semantic segmentation models for real-time robotic perception and crop analysis.</li>
+          </ul>
         </div>
-      </div>
+      </article>
 
-      <div class="swiss-card">
-        <div class="timeline-header">
-          <div>
-            <h3 class="timeline-role">Bachelor of Applied Science in Electrical Engineering</h3>
-            <div class="timeline-org">University of British Columbia (UBC) &bull; Vancouver, BC</div>
-          </div>
-          <div class="timeline-meta">
-            <div>Expected Graduation: 2028</div>
-            <div class="badge badge-emerald" style="margin-top: 0.35rem;">Cumulative GPA: 3.85 / 4.00</div>
-          </div>
+      <!-- YANKAI GROUP -->
+      <article class="exp-item">
+        <div class="exp-time">
+          Sep 2025 &ndash; Apr 2026
+          <span class="exp-location">Vancouver, BC</span>
         </div>
-
-        <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.75rem;">
-            Core Coursework &amp; Theoretical Foundations:
-          </div>
-          <div class="grid-2">
-            <ul class="spec-list">
-              <li class="spec-item"><span class="spec-item-bullet">&bull;</span><div><strong>Circuit Analysis:</strong> RLC circuits, frequency response, transfer functions, analog filters.</div></li>
-              <li class="spec-item"><span class="spec-item-bullet">&bull;</span><div><strong>Linear Systems &amp; Signals:</strong> Fourier transforms, Laplace transforms, z-transforms, continuous/discrete filtering.</div></li>
-              <li class="spec-item"><span class="spec-item-bullet">&bull;</span><div><strong>Computing Systems:</strong> Computer architecture, memory hierarchy, assembly instruction sets.</div></li>
-              <li class="spec-item"><span class="spec-item-bullet">&bull;</span><div><strong>Data Structures &amp; Algorithms:</strong> Algorithm complexity, trees, graphs, sorting, dynamic programming.</div></li>
-            </ul>
-            <ul class="spec-list">
-              <li class="spec-item"><span class="spec-item-bullet">&bull;</span><div><strong>Electromagnetism:</strong> Maxwell's equations, magnetic fields, induction, transmission lines.</div></li>
-              <li class="spec-item"><span class="spec-item-bullet">&bull;</span><div><strong>Differential Equations:</strong> Ordinary &amp; partial differential equations, state-space systems.</div></li>
-              <li class="spec-item"><span class="spec-item-bullet">&bull;</span><div><strong>Multivariable Calculus:</strong> Vector fields, gradient, divergence, curl, line &amp; surface integrals.</div></li>
-              <li class="spec-item"><span class="spec-item-bullet">&bull;</span><div><strong>Integral Calculus:</strong> Analytical integration methods, series expansions, numerical approximation.</div></li>
-            </ul>
-          </div>
+        <div>
+          <h2 class="exp-title">Research Assistant</h2>
+          <div class="exp-company">Yankai Group &bull; University of British Columbia</div>
+          <ul class="exp-bullets">
+            <li>Conducted experimental research on parameter-efficient fine-tuning (LoRA, PiSSA) on a 5B-parameter large language model, quantifying catastrophic forgetting across a sequence of 5 distinct NLP tasks.</li>
+            <li>Designed and implemented a reproducible benchmarking pipeline in Python using Hugging Face to evaluate catastrophic forgetting and retention performance across multiple fine-tuning strategies and datasets.</li>
+            <li>Analyzed experimental outputs for statistical consistency, identified performance anomalies, and synthesized findings into clear insights shared with graduate researchers (co-authored arXiv paper: 2603.09684).</li>
+          </ul>
         </div>
-      </div>
-    </section>
+      </article>
 
+      <!-- EDUCATION -->
+      <article class="exp-item">
+        <div class="exp-time">
+          Expected 2028
+          <span class="exp-location">Vancouver, BC</span>
+        </div>
+        <div>
+          <h2 class="exp-title">Bachelor of Applied Science in Electrical Engineering</h2>
+          <div class="exp-company">University of British Columbia &bull; Cumulative GPA: 3.85</div>
+          <ul class="exp-bullets">
+            <li><strong>Relevant Coursework:</strong> Circuit Analysis, Linear Systems, Data Structures &amp; Algorithms, Computing Systems, Integral Calculus, Multivariable Calculus, Differential Equations, Systems &amp; Signals, Electromagnetism.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
   </main>
 
-  <!-- =========================================================================
-       FOOTER
-       ========================================================================= -->
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-wrapper">
-      <div>
-        <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Muhammad Ahmad</div>
-        <div>Electrical & Computer Engineering &bull; University of British Columbia</div>
-      </div>
-      <div class="footer-links">
+    <div class="container footer-flex">
+      <div>Muhammad Ahmad &bull; University of British Columbia</div>
+      <div class="footer-links-clean">
         <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://linkedin.com/in/sulemanahmad2005" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:ahmadsuleman726@gmail.com">Email</a>
-        <a href="assets/resume.pdf" target="_blank">Resume</a>
       </div>
     </div>
   </footer>
