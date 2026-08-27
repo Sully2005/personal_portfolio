@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
+  initProjectCarousel();
   initContactForm();
 });
 
@@ -38,6 +39,55 @@ function initNavigation() {
     } else {
       link.classList.remove('active');
     }
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* Horizontal Projects Carousel & Expandable Details                          */
+/* -------------------------------------------------------------------------- */
+function initProjectCarousel() {
+  const track = document.getElementById('projectTrack');
+  const thumbs = document.querySelectorAll('.project-card-thumb');
+  const detailPanes = document.querySelectorAll('.detail-pane');
+  const leftBtn = document.getElementById('scrollLeftBtn');
+  const rightBtn = document.getElementById('scrollRightBtn');
+  const detailSection = document.getElementById('projectDetailSection');
+
+  if (!thumbs.length || !detailPanes.length) return;
+
+  // Arrow button scrolling
+  if (track && leftBtn && rightBtn) {
+    leftBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -280, behavior: 'smooth' });
+    });
+
+    rightBtn.addEventListener('click', () => {
+      track.scrollBy({ left: 280, behavior: 'smooth' });
+    });
+  }
+
+  // Card click to switch expanded detail pane
+  thumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const targetId = thumb.getAttribute('data-target');
+      if (!targetId) return;
+
+      // Update active thumbnail card
+      thumbs.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+
+      // Update active detail pane
+      detailPanes.forEach(pane => {
+        if (pane.id === targetId) {
+          pane.classList.add('active');
+        } else {
+          pane.classList.remove('active');
+        }
+      });
+
+      // Smooth scroll thumbnail into view within horizontal container
+      thumb.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+    });
   });
 }
 

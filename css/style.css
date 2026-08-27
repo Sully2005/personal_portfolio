@@ -12,6 +12,7 @@
   
   --border: #222222;
   --border-light: #2e2e2e;
+  --border-active: #ffffff;
   
   --text-main: #ffffff;
   --text-muted: #888888;
@@ -21,7 +22,7 @@
   --font-mono: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   --max-w: 860px;
-  --max-w-wide: 1040px;
+  --max-w-wide: 1080px;
 }
 
 *, *::before, *::after {
@@ -156,7 +157,7 @@ a:hover {
 
 /* ==========================================================================
    ABOUT / PROFILE PAGE
-   ========================================================================= */
+   ========================================================================== */
 .about-layout {
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -239,6 +240,7 @@ a:hover {
   gap: 0.35rem;
   border-bottom: 1px solid var(--border-light);
   padding-bottom: 2px;
+  cursor: pointer;
 }
 
 .text-link:hover {
@@ -250,9 +252,9 @@ a:hover {
    PAGE HEADERS (GENERAL)
    ========================================================================== */
 .page-intro {
-  padding: 3.5rem 0 2.5rem 0;
+  padding: 3.5rem 0 2rem 0;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .page-intro h1 {
@@ -266,56 +268,226 @@ a:hover {
 }
 
 /* ==========================================================================
-   PROJECTS (CLEAN & DECLUTTERED)
+   PROJECTS: HORIZONTAL SCROLL CAROUSEL & EXPANDABLE DETAILS
    ========================================================================== */
-.project-entry {
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 3.5rem;
-  margin-bottom: 3.5rem;
+.carousel-header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.project-entry:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.project-heading {
-  margin-bottom: 1.5rem;
-}
-
-.project-meta-line {
-  font-family: var(--font-mono);
-  font-size: 0.775rem;
+.carousel-instruction {
+  font-size: 0.825rem;
   color: var(--text-subtle);
+  font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 0.35rem;
 }
 
-.project-name {
-  font-size: 1.45rem;
+.carousel-nav-arrows {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-arrow-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.carousel-arrow-btn:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--border-light);
+}
+
+/* Horizontal Scroll Container */
+.horizontal-scroll-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-light) var(--bg);
+}
+
+.horizontal-scroll-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.horizontal-scroll-track::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+.horizontal-scroll-track::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 3px;
+}
+
+/* Project Thumbnail Card */
+.project-card-thumb {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  position: relative;
+  text-align: left;
+}
+
+.project-card-thumb:hover {
+  border-color: var(--border-light);
+  background: var(--bg-surface-hover);
+  transform: translateY(-2px);
+}
+
+.project-card-thumb.active {
+  border-color: var(--text-main);
+  background: var(--bg-surface-hover);
+}
+
+.project-card-thumb.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--text-main);
+}
+
+/* Card Image Slot in Horizontal Scroll */
+.thumb-media-box {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-subtle);
+  font-size: 0.75rem;
+  overflow: hidden;
+}
+
+.thumb-media-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+.thumb-tag {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--text-muted);
+}
+
+.thumb-cta {
+  font-size: 0.775rem;
+  color: var(--text-subtle);
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 0.65rem;
+}
+
+.project-card-thumb.active .thumb-cta {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   EXPANDED DETAIL SECTION
+   ========================================================================== */
+.project-detail-view {
+  border-top: 1px solid var(--border);
+  padding-top: 2.5rem;
+  margin-top: 1rem;
+}
+
+.detail-pane {
+  display: none;
+  animation: fadeIn 0.25s ease forwards;
+}
+
+.detail-pane.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detail-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-title {
+  font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 0.35rem;
 }
 
-.project-tools {
+.detail-tools {
+  font-family: var(--font-mono);
   font-size: 0.85rem;
   color: var(--text-muted);
-  font-family: var(--font-mono);
 }
 
-/* Media Grid for Projects */
-.project-media-grid {
+/* Media Grid in Expanded Pane */
+.detail-media-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
-  margin: 1.5rem 0;
+  margin: 1.75rem 0;
 }
 
 .media-box {
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  min-height: 200px;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -369,11 +541,11 @@ a:hover {
   font-size: 0.8rem;
 }
 
-/* Detailed Write-up */
-.project-description {
+/* Detailed Write-up Layout */
+.detail-content {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
@@ -412,14 +584,14 @@ a:hover {
   color: var(--text-subtle);
 }
 
-.project-footer-links {
+.detail-footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  padding-top: 1rem;
+  gap: 1.75rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--border);
-  font-size: 0.85rem;
+  font-size: 0.875rem;
 }
 
 /* ==========================================================================
@@ -639,7 +811,11 @@ textarea.form-input {
     max-width: 220px;
   }
 
-  .project-media-grid {
+  .project-card-thumb {
+    flex: 0 0 220px;
+  }
+
+  .detail-media-grid {
     grid-template-columns: 1fr;
   }
 

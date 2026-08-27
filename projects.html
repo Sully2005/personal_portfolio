@@ -36,268 +36,354 @@
   <main class="container">
     <div class="page-intro">
       <h1>Projects &amp; Research</h1>
-      <p>A selection of embedded systems, digital logic architectures, and machine learning research.</p>
+      <p>Select a project card below to view detailed hardware architectures, firmware design, and demonstrations.</p>
+    </div>
+
+    <!-- CAROUSEL CONTROLS & HINT -->
+    <div class="carousel-header-controls">
+      <div class="carousel-instruction">Scroll or select a project &rarr;</div>
+      <div class="carousel-nav-arrows">
+        <button class="carousel-arrow-btn" id="scrollLeftBtn" aria-label="Scroll left">&larr;</button>
+        <button class="carousel-arrow-btn" id="scrollRightBtn" aria-label="Scroll right">&rarr;</button>
+      </div>
     </div>
 
     <!-- =======================================================================
-         PROJECT 1: REFLOW OVEN CONTROLLER
+         HORIZONTAL SCROLL TRACK (CARDS)
          ======================================================================= -->
-    <article class="project-entry" id="reflow-oven">
-      <div class="project-heading">
-        <h2 class="project-name">Reflow Oven Controller</h2>
-        <div class="project-tools">CV-8052 Microcontroller &bull; Assembly &bull; K-Type Thermocouple &bull; Solid-State Relay (SSR) &bull; Python</div>
-      </div>
+    <div class="horizontal-scroll-track" id="projectTrack">
 
-      <!-- MEDIA GRID (PHOTO + VIDEO SLOTS) -->
-      <div class="project-media-grid">
-        <!-- Photo Placeholder -->
-        <!-- Replace below with: <div class="media-box"><img src="assets/projects/reflow_oven.jpg" alt="Reflow Oven Controller Setup"></div> -->
-        <div class="media-box">
+      <!-- CARD 1: REFLOW OVEN -->
+      <div class="project-card-thumb active" data-target="detail-reflow-oven">
+        <div class="thumb-media-box">
+          <!-- Replace with: <img src="assets/projects/reflow_oven.jpg" alt="Reflow Oven"> -->
           <div>[ Picture Space ]</div>
-          <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop reflow_oven.jpg into assets/projects/</div>
+          <div style="font-size: 0.65rem; color: var(--text-subtle); margin-top: 0.2rem;">reflow_oven.jpg</div>
         </div>
-
-        <!-- Video Placeholder -->
-        <!-- Replace inner container with: <iframe src="YOUR_EMBED_URL" allowfullscreen></iframe> or <video controls src="assets/projects/reflow.mp4"></video> -->
-        <div class="video-box">
-          <div class="video-box-placeholder">
-            <div>[ Video / Demo Space ]</div>
-            <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Insert video embed or link</div>
-          </div>
+        <div>
+          <div class="thumb-tag">CV-8052 &bull; Assembly</div>
+          <h2 class="thumb-title">Reflow Oven Controller</h2>
         </div>
-      </div>
-
-      <!-- WRITE-UP -->
-      <div class="project-description">
-        <p>
-          The Reflow Oven Controller is an embedded system designed to solder surface-mount devices (SMDs) onto printed circuit boards. Built around a CV-8052 microcontroller, the system regulates a 1500 W toaster oven to execute a multi-stage thermal profile while enforcing strict safety constraints.
-        </p>
-
-        <div class="project-section-block">
-          <div class="project-section-label">Hardware Design</div>
-          <ul class="clean-list">
-            <li><strong>Temperature Sensing:</strong> Utilizes a K-type thermocouple amplified by an op-amp circuit feeding voltage to the microcontroller's ADC.</li>
-            <li><strong>Thermal Control:</strong> A solid-state relay (SSR) receives pulse-width modulation (PWM) signals to regulate average oven power.</li>
-            <li><strong>User Interface:</strong> Includes an LCD, a keypad, switches, and a 7-segment display for temperature readouts.</li>
-            <li><strong>Safety Sensing:</strong> Incorporates an onboard accelerometer to detect physical disturbances or tipping.</li>
-          </ul>
-        </div>
-
-        <div class="project-section-block">
-          <div class="project-section-label">Software Design (Assembly)</div>
-          <ul class="clean-list">
-            <li><strong>Interrupt-Driven Scheduler:</strong> A 1 ms hardware timer manages PWM generation, time tracking, and display updates without blocking the control loop.</li>
-            <li><strong>Finite State Machine (FSM):</strong> Orchestrates the reflow cycle through six states: idle, preheat, soak, reflow ramp, hold, cool, and error.</li>
-            <li><strong>Digital Filtering:</strong> Averages multiple ADC readings to mitigate electrical noise before calculating temperature.</li>
-            <li><strong>Non-Blocking Audio:</strong> Uses an independent timer to generate audible feedback without freezing control logic.</li>
-          </ul>
-        </div>
-
-        <div class="project-section-block">
-          <div class="project-section-label">Key Features &amp; Telemetry</div>
-          <ul class="clean-list">
-            <li><strong>Accuracy:</strong> Maintains temperature tolerance with a maximum error of 2.998&deg;C across the 22&deg;C to 240&deg;C range.</li>
-            <li><strong>Safety Aborts:</strong> Automatically disables heating if the oven is tilted, manually stopped, or fails to reach 50&deg;C within 60 seconds.</li>
-            <li><strong>Telemetry Dashboard &amp; Reporting:</strong> Streams serial data to a Python web interface displaying a real-time plot of the reflow curve, and automatically generates and emails a PDF run report upon cycle completion.</li>
-          </ul>
+        <div class="thumb-cta">
+          <span>View Details</span>
+          <span>&rarr;</span>
         </div>
       </div>
 
-      <div class="project-footer-links">
-        <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">GitHub Repository &rarr;</a>
+      <!-- CARD 2: FIELD-TRACKING RC CAR -->
+      <div class="project-card-thumb" data-target="detail-rc-car">
+        <div class="thumb-media-box">
+          <!-- Replace with: <img src="assets/projects/rc_car.jpg" alt="RC Car"> -->
+          <div>[ Picture Space ]</div>
+          <div style="font-size: 0.65rem; color: var(--text-subtle); margin-top: 0.2rem;">rc_car.jpg</div>
+        </div>
+        <div>
+          <div class="thumb-tag">STM32 &bull; PIC32 &bull; EFM8</div>
+          <h2 class="thumb-title">Field-Tracking RC Car</h2>
+        </div>
+        <div class="thumb-cta">
+          <span>View Details</span>
+          <span>&rarr;</span>
+        </div>
       </div>
-    </article>
+
+      <!-- CARD 3: FPGA LOGIC ANALYZER -->
+      <div class="project-card-thumb" data-target="detail-logic-analyzer">
+        <div class="thumb-media-box">
+          <!-- Replace with: <img src="assets/projects/logic_analyzer.jpg" alt="FPGA Logic Analyzer"> -->
+          <div>[ Picture Space ]</div>
+          <div style="font-size: 0.65rem; color: var(--text-subtle); margin-top: 0.2rem;">logic_analyzer.jpg</div>
+        </div>
+        <div>
+          <div class="thumb-tag">MAX 10 FPGA &bull; SystemVerilog</div>
+          <h2 class="thumb-title">Digital Logic Analyzer</h2>
+        </div>
+        <div class="thumb-cta">
+          <span>View Details</span>
+          <span>&rarr;</span>
+        </div>
+      </div>
+
+      <!-- CARD 4: PEFT RESEARCH PAPER -->
+      <div class="project-card-thumb" data-target="detail-peft-paper">
+        <div class="thumb-media-box">
+          <!-- Replace with: <img src="assets/projects/paper_preview.jpg" alt="Paper PDF"> -->
+          <div>[ Picture Space ]</div>
+          <div style="font-size: 0.65rem; color: var(--text-subtle); margin-top: 0.2rem;">paper_preview.jpg</div>
+        </div>
+        <div>
+          <div class="thumb-tag">Research &bull; arXiv: 2603.09684</div>
+          <h2 class="thumb-title">Continual Learning in PEFT</h2>
+        </div>
+        <div class="thumb-cta">
+          <span>View Details</span>
+          <span>&rarr;</span>
+        </div>
+      </div>
+
+    </div>
 
 
     <!-- =======================================================================
-         PROJECT 2: FIELD-TRACKING RC CAR
+         EXPANDED DETAIL SECTION (UPON CLICKING A CARD)
          ======================================================================= -->
-    <article class="project-entry" id="rc-car">
-      <div class="project-heading">
-        <h2 class="project-name">Line-Following / Field-Tracking RC Car</h2>
-        <div class="project-tools">EFM8 &bull; STM32 &bull; PIC32 &bull; C &bull; Inductive Sensor Array &bull; VL53L0X ToF &bull; IR Communication</div>
-      </div>
+    <section class="project-detail-view" id="projectDetailSection">
 
-      <!-- MEDIA GRID -->
-      <div class="project-media-grid">
-        <!-- Photo Placeholder -->
-        <!-- Replace below with: <div class="media-box"><img src="assets/projects/rc_car.jpg" alt="RC Car Setup"></div> -->
-        <div class="media-box">
-          <div>[ Picture Space ]</div>
-          <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop rc_car.jpg into assets/projects/</div>
-        </div>
-
-        <!-- Video Placeholder -->
-        <div class="video-box">
-          <div class="video-box-placeholder">
-            <div>[ Video / Demo Space ]</div>
-            <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Insert video embed or Google Drive link</div>
+      <!-- =====================================================================
+           DETAIL PANE 1: REFLOW OVEN CONTROLLER
+           ===================================================================== -->
+      <div class="detail-pane active" id="detail-reflow-oven">
+        <div class="detail-header-flex">
+          <div>
+            <h2 class="detail-title">Reflow Oven Controller</h2>
+            <div class="detail-tools">CV-8052 Microcontroller &bull; Assembly 8052 &bull; K-Type Thermocouple &bull; Solid-State Relay (SSR) &bull; Python Telemetry</div>
           </div>
         </div>
-      </div>
 
-      <!-- WRITE-UP -->
-      <div class="project-description">
-        <p>
-          The Field Tracking Robot is an embedded system capable of manual and autonomous navigation. The vehicle detects and follows magnetic fields generated by an energized guide wire, executes pre-programmed path decisions at intersections, and responds to infrared (IR) remote commands.
-        </p>
+        <!-- MEDIA GRID (PHOTO + VIDEO) -->
+        <div class="detail-media-grid">
+          <!-- Photo Placeholder -->
+          <div class="media-box">
+            <!-- Replace with: <img src="assets/projects/reflow_oven.jpg" alt="Reflow Oven Controller Setup"> -->
+            <div>[ Project Picture Space ]</div>
+            <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop reflow_oven.jpg into assets/projects/</div>
+          </div>
 
-        <div class="project-section-block">
-          <div class="project-section-label">Hardware Design</div>
-          <ul class="clean-list">
-            <li><strong>Processing:</strong> An EFM8 microcontroller drives the robot, an STM32 microcontroller manages the remote controller, and a PIC32 microcontroller controls a servo-based lifting mechanism on the RC car.</li>
-            <li><strong>Sensors:</strong> Three inductive coils, amplified by op-amps, detect the magnetic guide wire. A VL53L0X Time-of-Flight (ToF) sensor measures obstacle distance over I2C.</li>
-            <li><strong>Actuation:</strong> Discrete MOSFET-based H-bridges drive bidirectional motor movement.</li>
-            <li><strong>Communication:</strong> A MOSFET-driven IR LED transmits 38 kHz modulated signals from the remote.</li>
-          </ul>
-        </div>
-
-        <div class="project-section-block">
-          <div class="project-section-label">Software Design (Bare-Metal C)</div>
-          <ul class="clean-list">
-            <li><strong>Control Logic:</strong> A finite state machine (FSM) maps movement states to pulse-width modulation (PWM) outputs for motor control.</li>
-            <li><strong>Navigation:</strong> A threshold-based algorithm compares left and right inductor ADC readings to maintain wire alignment. The middle inductor triggers intersection path sequences.</li>
-            <li><strong>Speed Regulation:</strong> A Proportional-Integral-Derivative (PID) controller dynamically adjusts motor PWM based on ToF sensor data to maintain a target 100 mm following distance.</li>
-            <li><strong>Communication:</strong> Timer interrupts generate PWM for IR transmission, while UART decoding translates received commands.</li>
-          </ul>
-        </div>
-
-        <div class="project-section-block">
-          <div class="project-section-label">Features</div>
-          <ul class="clean-list">
-            <li><strong>Navigation Modes:</strong> Operates in manual remote-control mode or autonomous guide-wire tracking mode with intersection path selection.</li>
-            <li><strong>Cruise Control &amp; Safety:</strong> PID cruise control maintaining a 100 mm buffer from obstacles; supports forward, reverse, pivot, and fine-grained adjustments.</li>
-            <li><strong>Feedback &amp; Terrain:</strong> Battery voltage monitoring LEDs, directional blinkers, audio alerts, and an isolated servo mechanism to traverse uneven surfaces.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="project-footer-links">
-        <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">GitHub Repository &rarr;</a>
-      </div>
-    </article>
-
-
-    <!-- =======================================================================
-         PROJECT 3: MULTI-PROTOCOL FPGA LOGIC ANALYZER
-         ======================================================================= -->
-    <article class="project-entry" id="logic-analyzer">
-      <div class="project-heading">
-        <h2 class="project-name">Multi-Protocol Digital Logic Analyzer</h2>
-        <div class="project-tools">Intel DE10-Lite FPGA (MAX 10) &bull; SystemVerilog &bull; QuestaSim &bull; SPI &bull; I2C &bull; UART &bull; Python</div>
-      </div>
-
-      <!-- MEDIA GRID -->
-      <div class="project-media-grid">
-        <!-- Photo Placeholder -->
-        <!-- Replace below with: <div class="media-box"><img src="assets/projects/logic_analyzer.jpg" alt="FPGA Setup"></div> -->
-        <div class="media-box">
-          <div>[ Picture Space ]</div>
-          <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop logic_analyzer.jpg into assets/projects/</div>
-        </div>
-
-        <!-- Video Placeholder -->
-        <div class="video-box">
-          <div class="video-box-placeholder">
-            <div>[ Video / Demo Space ]</div>
-            <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Insert video embed or link</div>
+          <!-- Video Placeholder -->
+          <div class="video-box">
+            <!-- Replace with: <iframe src="YOUR_EMBED_URL" allowfullscreen></iframe> or <video controls src="assets/projects/reflow.mp4"></video> -->
+            <div class="video-box-placeholder">
+              <div>[ Video / Demo Space ]</div>
+              <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Insert video embed or demo link</div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- WRITE-UP -->
-      <div class="project-description">
-        <p>
-          The Logic Analyzer is a hardware tool built on the Intel DE10-Lite FPGA to capture and decode SPI, I2C, and UART serial communication protocols. The system processes incoming signals, buffers the data, and transmits it to a host PC for monitoring and analysis.
-        </p>
+        <div class="detail-content">
+          <p>
+            The Reflow Oven Controller is an embedded system designed to solder surface-mount devices (SMDs) onto printed circuit boards. Built around a CV-8052 microcontroller, the system regulates a 1500 W toaster oven to execute a multi-stage thermal profile while enforcing strict safety constraints.
+          </p>
 
-        <div class="project-section-block">
-          <div class="project-section-label">Design &amp; Architecture</div>
-          <ul class="clean-list">
-            <li><strong>Processing Platform:</strong> Synthesized on the Intel DE10-Lite FPGA board.</li>
-            <li><strong>Signal Source &amp; Validation:</strong> Tested and validated using an ESP32 microcontroller to generate SPI, I2C, and UART test signals.</li>
-            <li><strong>State Machines &amp; Oversampling:</strong> SystemVerilog finite state machines (FSMs) utilize 16x oversampling to decode incoming serial data streams reliably.</li>
-            <li><strong>Data Management:</strong> A hardware FIFO buffer stores decoded data packets to prevent data loss prior to transmission across asynchronous clock domains.</li>
-            <li><strong>Verification:</strong> Hardware modules were simulated, timing-verified, and debugged using QuestaSim.</li>
-          </ul>
-        </div>
+          <div class="project-section-block">
+            <div class="project-section-label">Hardware Design</div>
+            <ul class="clean-list">
+              <li><strong>Temperature Sensing:</strong> Utilizes a K-type thermocouple amplified by an op-amp circuit feeding voltage to the microcontroller's ADC.</li>
+              <li><strong>Thermal Control:</strong> A solid-state relay (SSR) receives pulse-width modulation (PWM) signals to regulate average oven power.</li>
+              <li><strong>User Interface:</strong> Includes an LCD, a keypad, switches, and a 7-segment display for temperature readouts.</li>
+              <li><strong>Safety Sensing:</strong> Incorporates an onboard accelerometer to detect physical disturbances or tipping.</li>
+            </ul>
+          </div>
 
-        <div class="project-section-block">
-          <div class="project-section-label">Features &amp; Telemetry</div>
-          <ul class="clean-list">
-            <li><strong>Multi-Protocol Decoding:</strong> Configurable hardware decoding for SPI, I2C, and UART protocols.</li>
-            <li><strong>User Interface:</strong> 7-segment displays provide real-time visual indication of the active protocols and decoded data.</li>
-            <li><strong>PC Telemetry:</strong> A Python script reads the serial data via UART and parses communication packets for terminal display.</li>
-          </ul>
-        </div>
-      </div>
+          <div class="project-section-block">
+            <div class="project-section-label">Software Design (Assembly)</div>
+            <ul class="clean-list">
+              <li><strong>Interrupt-Driven Scheduler:</strong> A 1 ms hardware timer manages PWM generation, time tracking, and display updates without blocking the control loop.</li>
+              <li><strong>Finite State Machine (FSM):</strong> Orchestrates the reflow cycle through six states: idle, preheat, soak, reflow ramp, hold, cool, and error.</li>
+              <li><strong>Digital Filtering:</strong> Averages multiple ADC readings to mitigate electrical noise before calculating temperature.</li>
+              <li><strong>Non-Blocking Audio:</strong> Uses an independent timer to generate audible feedback without freezing control logic.</li>
+            </ul>
+          </div>
 
-      <div class="project-footer-links">
-        <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">GitHub HDL Code &rarr;</a>
-      </div>
-    </article>
-
-
-    <!-- =======================================================================
-         PROJECT 4: RESEARCH PAPER - CATASTROPHIC FORGETTING IN PEFT
-         ======================================================================= -->
-    <article class="project-entry" id="peft-paper">
-      <div class="project-heading">
-        <h2 class="project-name">On Catastrophic Forgetting in Low-Rank Decomposition-Based PEFT</h2>
-        <div class="project-tools">Research Paper &bull; arXiv: 2603.09684 &bull; Vision Transformers (ViT) &bull; LoRA &bull; PiSSA &bull; LoRETTA &bull; WeGeFT</div>
-      </div>
-
-      <!-- MEDIA GRID -->
-      <div class="project-media-grid">
-        <!-- Photo Placeholder -->
-        <!-- Replace below with: <div class="media-box"><img src="assets/projects/paper_preview.jpg" alt="Paper PDF Preview"></div> -->
-        <div class="media-box">
-          <div>[ Picture / Paper PDF Space ]</div>
-          <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop paper_preview.jpg into assets/projects/</div>
-        </div>
-
-        <!-- Video Placeholder -->
-        <div class="video-box">
-          <div class="video-box-placeholder">
-            <div>[ Video / Demo Space ]</div>
-            <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Insert presentation / demo link</div>
+          <div class="project-section-block">
+            <div class="project-section-label">Key Features &amp; Telemetry</div>
+            <ul class="clean-list">
+              <li><strong>Accuracy:</strong> Maintains temperature tolerance with a maximum error of 2.998&deg;C across the 22&deg;C to 240&deg;C range.</li>
+              <li><strong>Safety Aborts:</strong> Automatically disables heating if the oven is tilted, manually stopped, or fails to reach 50&deg;C within 60 seconds.</li>
+              <li><strong>Telemetry Dashboard &amp; Reporting:</strong> Streams serial data to a Python web interface displaying a real-time plot of the reflow curve, and automatically generates and emails a PDF run report upon cycle completion.</li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      <!-- WRITE-UP -->
-      <div class="project-description">
-        <p>
-          <em>Muhammad Ahmad, Jingjing Zheng, Yankai Cao (University of British Columbia).</em><br><br>
-          Developed in collaboration with a PhD student, this research paper investigates catastrophic forgetting in low-rank decomposition-based Parameter-Efficient Fine-Tuning (PEFT) methods under continual learning settings. It explores how constraining model updates to low-dimensional subspaces influences task interference and knowledge retention across sequential computer vision tasks.
-        </p>
-
-        <div class="project-section-block">
-          <div class="project-section-label">Methodology &amp; Experimental Setup</div>
-          <ul class="clean-list">
-            <li><strong>Model Architecture:</strong> Utilizes Vision Transformers (ViT-Base and ViT-Large) pretrained on ImageNet-1K as the base backbones.</li>
-            <li><strong>Fine-Tuning Framework:</strong> Evaluates Full Fine-Tuning against four PEFT strategies: LoRA, PiSSA, LoRETTA, and WeGeFT implemented via Hugging Face.</li>
-            <li><strong>Execution &amp; Automation:</strong> Evaluated across sequential vision tasks (CUB-200-2011, EuroSAT, Intel Image Classification, and Sports Image Classification) using automated Python and Bash execution pipelines.</li>
-            <li><strong>Evaluation Metrics:</strong> Assesses performance via Chaudhry's average forgetting metric, per-task accuracy, and final average accuracy across sequential tasks.</li>
-          </ul>
-        </div>
-
-        <div class="project-section-block">
-          <div class="project-section-label">Key Findings</div>
-          <ul class="clean-list">
-            <li><strong>Matrix Rank Trade-offs:</strong> Standard LoRA exhibits higher forgetting at small ranks due to forced shared directions, whereas higher ranks steadily decrease forgetting.</li>
-            <li><strong>Principal Subspace Interference:</strong> PiSSA causes significant forgetting at low ranks by directly updating the principal singular vectors encoding shared representations.</li>
-            <li><strong>Structural Alignment &amp; Tensor Benefits:</strong> Structurally aligned methods (WeGeFT) and tensor-train decompositions (LoRETTA) minimize forgetting with minimal parameter budgets.</li>
-          </ul>
+        <div class="detail-footer-links">
+          <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">GitHub Repository &rarr;</a>
         </div>
       </div>
 
-      <div class="project-footer-links">
-        <a href="https://arxiv.org/abs/2603.09684" target="_blank" rel="noopener noreferrer" class="text-link">Read Paper on arXiv &rarr;</a>
-        <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">Benchmarking Repository &rarr;</a>
-      </div>
-    </article>
 
+      <!-- =====================================================================
+           DETAIL PANE 2: FIELD-TRACKING RC CAR
+           ===================================================================== -->
+      <div class="detail-pane" id="detail-rc-car">
+        <div class="detail-header-flex">
+          <div>
+            <h2 class="detail-title">Line-Following / Field-Tracking RC Car</h2>
+            <div class="detail-tools">EFM8 &bull; STM32 &bull; PIC32 &bull; Bare-Metal C &bull; Inductive Sensor Array &bull; VL53L0X ToF &bull; IR Communication</div>
+          </div>
+        </div>
+
+        <!-- MEDIA GRID -->
+        <div class="detail-media-grid">
+          <div class="media-box">
+            <!-- Replace with: <img src="assets/projects/rc_car.jpg" alt="RC Car"> -->
+            <div>[ Project Picture Space ]</div>
+            <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop rc_car.jpg into assets/projects/</div>
+          </div>
+          <div class="video-box">
+            <div class="video-box-placeholder">
+              <div>[ Video / Demo Space ]</div>
+              <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Insert video embed or Google Drive link</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-content">
+          <p>
+            The Field Tracking Robot is an embedded system capable of manual and autonomous navigation. The vehicle detects and follows magnetic fields generated by an energized guide wire, executes pre-programmed path decisions at intersections, and responds to infrared (IR) remote commands.
+          </p>
+
+          <div class="project-section-block">
+            <div class="project-section-label">Hardware Design</div>
+            <ul class="clean-list">
+              <li><strong>Processing:</strong> An EFM8 microcontroller drives the robot, an STM32 microcontroller manages the remote controller, and a PIC32 microcontroller controls a servo-based lifting mechanism on the RC car.</li>
+              <li><strong>Sensors:</strong> Three inductive coils, amplified by op-amps, detect the magnetic guide wire. A VL53L0X Time-of-Flight (ToF) sensor measures obstacle distance over I2C.</li>
+              <li><strong>Actuation:</strong> Discrete MOSFET-based H-bridges drive bidirectional motor movement.</li>
+              <li><strong>Communication:</strong> A MOSFET-driven IR LED transmits 38 kHz modulated signals from the remote.</li>
+            </ul>
+          </div>
+
+          <div class="project-section-block">
+            <div class="project-section-label">Software Design (Bare-Metal C)</div>
+            <ul class="clean-list">
+              <li><strong>Control Logic:</strong> A finite state machine (FSM) maps movement states to pulse-width modulation (PWM) outputs for motor control.</li>
+              <li><strong>Navigation:</strong> A threshold-based algorithm compares left and right inductor ADC readings to maintain wire alignment. The middle inductor triggers intersection path sequences.</li>
+              <li><strong>Speed Regulation:</strong> A Proportional-Integral-Derivative (PID) controller dynamically adjusts motor PWM based on ToF sensor data to maintain a target 100 mm following distance.</li>
+              <li><strong>Communication:</strong> Timer interrupts generate PWM for IR transmission, while UART decoding translates received commands.</li>
+            </ul>
+          </div>
+
+          <div class="project-section-block">
+            <div class="project-section-label">Features</div>
+            <ul class="clean-list">
+              <li><strong>Navigation Modes:</strong> Operates in manual remote-control mode or autonomous guide-wire tracking mode with intersection path selection.</li>
+              <li><strong>Cruise Control &amp; Safety:</strong> PID cruise control maintaining a 100 mm buffer from obstacles; supports forward, reverse, pivot, and fine-grained adjustments.</li>
+              <li><strong>Feedback &amp; Terrain:</strong> Battery voltage monitoring LEDs, directional blinkers, audio alerts, and an isolated servo mechanism to traverse uneven surfaces.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="detail-footer-links">
+          <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">GitHub Repository &rarr;</a>
+        </div>
+      </div>
+
+
+      <!-- =====================================================================
+           DETAIL PANE 3: MULTI-PROTOCOL FPGA LOGIC ANALYZER
+           ===================================================================== -->
+      <div class="detail-pane" id="detail-logic-analyzer">
+        <div class="detail-header-flex">
+          <div>
+            <h2 class="detail-title">Multi-Protocol Digital Logic Analyzer</h2>
+            <div class="detail-tools">Intel DE10-Lite FPGA (MAX 10) &bull; SystemVerilog &bull; QuestaSim &bull; SPI &bull; I2C &bull; UART &bull; Python</div>
+          </div>
+        </div>
+
+        <!-- MEDIA GRID -->
+        <div class="detail-media-grid">
+          <div class="media-box">
+            <!-- Replace with: <img src="assets/projects/logic_analyzer.jpg" alt="FPGA Setup"> -->
+            <div>[ Project Picture Space ]</div>
+            <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop logic_analyzer.jpg into assets/projects/</div>
+          </div>
+          <div class="video-box">
+            <div class="video-box-placeholder">
+              <div>[ Video / Demo Space ]</div>
+              <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Insert video embed or link</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-content">
+          <p>
+            The Logic Analyzer is a hardware tool built on the Intel DE10-Lite FPGA to capture and decode SPI, I2C, and UART serial communication protocols. The system processes incoming signals, buffers the data, and transmits it to a host PC for monitoring and analysis.
+          </p>
+
+          <div class="project-section-block">
+            <div class="project-section-label">Design &amp; Architecture</div>
+            <ul class="clean-list">
+              <li><strong>Processing Platform:</strong> Synthesized on the Intel DE10-Lite FPGA board.</li>
+              <li><strong>Signal Source &amp; Validation:</strong> Tested and validated using an ESP32 microcontroller to generate SPI, I2C, and UART test signals.</li>
+              <li><strong>State Machines &amp; Oversampling:</strong> SystemVerilog finite state machines (FSMs) utilize 16x oversampling to decode incoming serial data streams reliably.</li>
+              <li><strong>Data Management:</strong> A hardware FIFO buffer stores decoded data packets to prevent data loss prior to transmission across asynchronous clock domains.</li>
+              <li><strong>Verification:</strong> Hardware modules were simulated, timing-verified, and debugged using QuestaSim.</li>
+            </ul>
+          </div>
+
+          <div class="project-section-block">
+            <div class="project-section-label">Features &amp; Telemetry</div>
+            <ul class="clean-list">
+              <li><strong>Multi-Protocol Decoding:</strong> Configurable hardware decoding for SPI, I2C, and UART protocols.</li>
+              <li><strong>User Interface:</strong> 7-segment displays provide real-time visual indication of the active protocols and decoded data.</li>
+              <li><strong>PC Telemetry:</strong> A Python script reads the serial data via UART and parses communication packets for terminal display.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="detail-footer-links">
+          <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">GitHub HDL Code &rarr;</a>
+        </div>
+      </div>
+
+
+      <!-- =====================================================================
+           DETAIL PANE 4: PEFT RESEARCH PAPER
+           ===================================================================== -->
+      <div class="detail-pane" id="detail-peft-paper">
+        <div class="detail-header-flex">
+          <div>
+            <h2 class="detail-title">On Catastrophic Forgetting in Low-Rank Decomposition-Based PEFT</h2>
+            <div class="detail-tools">Research Paper &bull; arXiv: 2603.09684 &bull; Vision Transformers (ViT) &bull; LoRA &bull; PiSSA &bull; LoRETTA &bull; WeGeFT</div>
+          </div>
+        </div>
+
+        <!-- MEDIA GRID -->
+        <div class="detail-media-grid">
+          <div class="media-box">
+            <!-- Replace with: <img src="assets/projects/paper_preview.jpg" alt="Paper PDF"> -->
+            <div>[ Paper Picture Space ]</div>
+            <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop paper_preview.jpg into assets/projects/</div>
+          </div>
+          <div class="video-box">
+            <div class="video-box-placeholder">
+              <div>[ Video / Demo Space ]</div>
+              <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Insert presentation / demo link</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-content">
+          <p>
+            <em>Muhammad Ahmad, Jingjing Zheng, Yankai Cao (University of British Columbia).</em><br><br>
+            Developed in collaboration with a PhD student, this research paper investigates catastrophic forgetting in low-rank decomposition-based Parameter-Efficient Fine-Tuning (PEFT) methods under continual learning settings. It explores how constraining model updates to low-dimensional subspaces influences task interference and knowledge retention across sequential computer vision tasks.
+          </p>
+
+          <div class="project-section-block">
+            <div class="project-section-label">Methodology &amp; Experimental Setup</div>
+            <ul class="clean-list">
+              <li><strong>Model Architecture:</strong> Utilizes Vision Transformers (ViT-Base and ViT-Large) pretrained on ImageNet-1K as the base backbones.</li>
+              <li><strong>Fine-Tuning Framework:</strong> Evaluates Full Fine-Tuning against four PEFT strategies: LoRA, PiSSA, LoRETTA, and WeGeFT implemented via Hugging Face.</li>
+              <li><strong>Execution &amp; Automation:</strong> Evaluated across sequential vision tasks (CUB-200-2011, EuroSAT, Intel Image Classification, and Sports Image Classification) using automated Python and Bash execution pipelines.</li>
+              <li><strong>Evaluation Metrics:</strong> Assesses performance via Chaudhry's average forgetting metric, per-task accuracy, and final average accuracy across sequential tasks.</li>
+            </ul>
+          </div>
+
+          <div class="project-section-block">
+            <div class="project-section-label">Key Findings</div>
+            <ul class="clean-list">
+              <li><strong>Matrix Rank Trade-offs:</strong> Standard LoRA exhibits higher forgetting at small ranks due to forced shared directions, whereas higher ranks steadily decrease forgetting.</li>
+              <li><strong>Principal Subspace Interference:</strong> PiSSA causes significant forgetting at low ranks by directly updating the principal singular vectors encoding shared representations.</li>
+              <li><strong>Structural Alignment &amp; Tensor Benefits:</strong> Structurally aligned methods (WeGeFT) and tensor-train decompositions (LoRETTA) minimize forgetting with minimal parameter budgets.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="detail-footer-links">
+          <a href="https://arxiv.org/abs/2603.09684" target="_blank" rel="noopener noreferrer" class="text-link">Read Paper on arXiv &rarr;</a>
+          <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">Benchmarking Repository &rarr;</a>
+        </div>
+      </div>
+
+    </section>
   </main>
 
   <!-- FOOTER -->
