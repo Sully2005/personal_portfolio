@@ -133,47 +133,78 @@ function initProjectsSubmenu() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Contact Interactions: 1-Click Copy & Direct Mail                            */
+/* Contact Interactions: 1-Click Copy & Direct Messaging                       */
 /* -------------------------------------------------------------------------- */
 function initContactForm() {
-  const copyBtn = document.getElementById('copyEmailBtn');
-  
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async () => {
-      const email = copyBtn.getAttribute('data-email') || 'ahmadsuleman726@gmail.com';
+  // Helper copy function
+  async function copyToClipboard(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    }
+  }
+
+  // Copy Email Button
+  const copyEmailBtn = document.getElementById('copyEmailBtn');
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', async () => {
+      const email = copyEmailBtn.getAttribute('data-email') || 'ahmadsuleman726@gmail.com';
       try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(email);
-        } else {
-          // Fallback for older/insecure environments
-          const textarea = document.createElement('textarea');
-          textarea.value = email;
-          textarea.style.position = 'fixed';
-          textarea.style.opacity = '0';
-          document.body.appendChild(textarea);
-          textarea.focus();
-          textarea.select();
-          document.execCommand('copy');
-          document.body.removeChild(textarea);
-        }
-        
-        // Visual feedback
-        const originalText = copyBtn.innerHTML;
-        copyBtn.innerHTML = `
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px; color: var(--accent-orange);">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          Copied!
-        `;
+        await copyToClipboard(email);
+        copyEmailBtn.textContent = 'Copied!';
         showToast('✓ Email copied to clipboard');
-        
         setTimeout(() => {
-          copyBtn.innerHTML = originalText;
+          copyEmailBtn.textContent = 'Copy';
         }, 2200);
       } catch (err) {
         showToast('Email: ' + email);
       }
     });
+  }
+
+  // Copy Phone Button
+  const copyPhoneBtn = document.getElementById('copyPhoneBtn');
+  if (copyPhoneBtn) {
+    copyPhoneBtn.addEventListener('click', async () => {
+      const phone = copyPhoneBtn.getAttribute('data-phone') || '825-365-1445';
+      try {
+        await copyToClipboard(phone);
+        copyPhoneBtn.textContent = 'Copied!';
+        showToast('✓ Phone number copied for messaging');
+        setTimeout(() => {
+          copyPhoneBtn.textContent = 'Copy';
+        }, 2200);
+      } catch (err) {
+        showToast('Phone: ' + phone);
+      }
+    });
+  }
+
+  // SMS Link Desktop Interceptor (prevents browser prompt on desktop, copies instead)
+  const smsLink = document.getElementById('smsLink');
+  if (smsLink) {
+    const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+    if (!isMobile) {
+      smsLink.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const phone = '825-365-1445';
+        try {
+          await copyToClipboard(phone);
+          showToast('✓ Phone number copied for messaging');
+        } catch (err) {
+          showToast('Phone: ' + phone);
+        }
+      });
+    }
   }
 }
 
