@@ -5,7 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
-  initProjectCarousel();
+  initProjectsSubmenu();
   initContactForm();
 });
 
@@ -43,51 +43,92 @@ function initNavigation() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Horizontal Projects Carousel & Expandable Details                          */
+/* Projects Card Grid to Submenu Expansion (David Reina Style)                */
 /* -------------------------------------------------------------------------- */
-function initProjectCarousel() {
-  const track = document.getElementById('projectTrack');
-  const thumbs = document.querySelectorAll('.project-card-thumb');
-  const detailPanes = document.querySelectorAll('.detail-pane');
-  const leftBtn = document.getElementById('scrollLeftBtn');
-  const rightBtn = document.getElementById('scrollRightBtn');
-  const detailSection = document.getElementById('projectDetailSection');
+function initProjectsSubmenu() {
+  const gridView = document.getElementById('projectsGridView');
+  const cardItems = document.querySelectorAll('.project-card-item');
+  const submenuViews = document.querySelectorAll('.project-submenu-view');
+  const backButtons = document.querySelectorAll('[data-back]');
+  const pagerButtons = document.querySelectorAll('[data-switch]');
 
-  if (!thumbs.length || !detailPanes.length) return;
+  if (!gridView || !cardItems.length) return;
 
-  // Arrow button scrolling
-  if (track && leftBtn && rightBtn) {
-    leftBtn.addEventListener('click', () => {
-      track.scrollBy({ left: -280, behavior: 'smooth' });
-    });
+  function openProject(projectId, updateHash = true) {
+    const targetView = document.getElementById(`view-${projectId}`);
+    if (!targetView) return;
 
-    rightBtn.addEventListener('click', () => {
-      track.scrollBy({ left: 280, behavior: 'smooth' });
-    });
+    // Hide Grid, show target submenu view
+    gridView.style.display = 'none';
+    submenuViews.forEach(view => view.classList.remove('active'));
+    targetView.classList.add('active');
+
+    // Scroll to top of page smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Update URL hash
+    if (updateHash) {
+      history.pushState(null, '', `#${projectId}`);
+    }
   }
 
-  // Card click to switch expanded detail pane
-  thumbs.forEach(thumb => {
-    thumb.addEventListener('click', () => {
-      const targetId = thumb.getAttribute('data-target');
-      if (!targetId) return;
+  function closeToGrid(updateHash = true) {
+    submenuViews.forEach(view => view.classList.remove('active'));
+    gridView.style.display = 'block';
 
-      // Update active thumbnail card
-      thumbs.forEach(t => t.classList.remove('active'));
-      thumb.classList.add('active');
+    if (updateHash) {
+      history.pushState(null, '', window.location.pathname);
+    }
+  }
 
-      // Update active detail pane
-      detailPanes.forEach(pane => {
-        if (pane.id === targetId) {
-          pane.classList.add('active');
-        } else {
-          pane.classList.remove('active');
-        }
-      });
-
-      // Smooth scroll thumbnail into view within horizontal container
-      thumb.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+  // Card click triggers project expansion
+  cardItems.forEach(card => {
+    card.addEventListener('click', () => {
+      const projectId = card.getAttribute('data-project');
+      if (projectId) {
+        openProject(projectId);
+      }
     });
+  });
+
+  // Back button triggers return to grid
+  backButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeToGrid();
+    });
+  });
+
+  // Next / Prev pager buttons
+  pagerButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const nextProjectId = btn.getAttribute('data-switch');
+      if (nextProjectId) {
+        openProject(nextProjectId);
+      }
+    });
+  });
+
+  // Handle URL hash on initial load
+  function checkHash() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && document.getElementById(`view-${hash}`)) {
+      openProject(hash, false);
+    } else {
+      closeToGrid(false);
+    }
+  }
+
+  // Listen for browser back / forward navigation
+  window.addEventListener('popstate', checkHash);
+  checkHash();
+
+  // Escape key closes submenu view
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && gridView.style.display === 'none') {
+      closeToGrid();
+    }
   });
 }
 

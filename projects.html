@@ -32,124 +32,121 @@
     </div>
   </nav>
 
-  <!-- PROJECTS CONTENT -->
+  <!-- PROJECTS MAIN CONTAINER -->
   <main class="container">
-    <div class="page-intro">
-      <h1>Projects &amp; Research</h1>
-      <p>Select a project card below to view detailed hardware architectures, firmware design, and demonstrations.</p>
-    </div>
-
-    <!-- CAROUSEL CONTROLS & HINT -->
-    <div class="carousel-header-controls">
-      <div class="carousel-instruction">Scroll or select a project &rarr;</div>
-      <div class="carousel-nav-arrows">
-        <button class="carousel-arrow-btn" id="scrollLeftBtn" aria-label="Scroll left">&larr;</button>
-        <button class="carousel-arrow-btn" id="scrollRightBtn" aria-label="Scroll right">&rarr;</button>
-      </div>
-    </div>
 
     <!-- =======================================================================
-         HORIZONTAL SCROLL TRACK (CARDS)
+         SECTION 1: MAIN CARD GRID VIEW
          ======================================================================= -->
-    <div class="horizontal-scroll-track" id="projectTrack">
-
-      <!-- CARD 1: REFLOW OVEN -->
-      <div class="project-card-thumb active" data-target="detail-reflow-oven">
-        <div class="thumb-media-box">
-          <!-- Replace with: <img src="assets/projects/reflow_oven.jpg" alt="Reflow Oven"> -->
-          <div>[ Picture Space ]</div>
-          <div style="font-size: 0.65rem; color: var(--text-subtle); margin-top: 0.2rem;">reflow_oven.jpg</div>
-        </div>
-        <div>
-          <div class="thumb-tag">CV-8052 &bull; Assembly</div>
-          <h2 class="thumb-title">Reflow Oven Controller</h2>
-        </div>
-        <div class="thumb-cta">
-          <span>View Details</span>
-          <span>&rarr;</span>
-        </div>
+    <div id="projectsGridView">
+      <div class="page-intro">
+        <h1>Projects &amp; Research</h1>
+        <p>A selection of embedded systems, digital logic architectures, and machine learning research.</p>
       </div>
 
-      <!-- CARD 2: FIELD-TRACKING RC CAR -->
-      <div class="project-card-thumb" data-target="detail-rc-car">
-        <div class="thumb-media-box">
-          <!-- Replace with: <img src="assets/projects/rc_car.jpg" alt="RC Car"> -->
-          <div>[ Picture Space ]</div>
-          <div style="font-size: 0.65rem; color: var(--text-subtle); margin-top: 0.2rem;">rc_car.jpg</div>
-        </div>
-        <div>
-          <div class="thumb-tag">STM32 &bull; PIC32 &bull; EFM8</div>
-          <h2 class="thumb-title">Field-Tracking RC Car</h2>
-        </div>
-        <div class="thumb-cta">
-          <span>View Details</span>
-          <span>&rarr;</span>
-        </div>
-      </div>
+      <div class="projects-grid">
 
-      <!-- CARD 3: FPGA LOGIC ANALYZER -->
-      <div class="project-card-thumb" data-target="detail-logic-analyzer">
-        <div class="thumb-media-box">
-          <!-- Replace with: <img src="assets/projects/logic_analyzer.jpg" alt="FPGA Logic Analyzer"> -->
-          <div>[ Picture Space ]</div>
-          <div style="font-size: 0.65rem; color: var(--text-subtle); margin-top: 0.2rem;">logic_analyzer.jpg</div>
-        </div>
-        <div>
-          <div class="thumb-tag">MAX 10 FPGA &bull; SystemVerilog</div>
-          <h2 class="thumb-title">Digital Logic Analyzer</h2>
-        </div>
-        <div class="thumb-cta">
-          <span>View Details</span>
-          <span>&rarr;</span>
-        </div>
-      </div>
+        <!-- CARD 1: REFLOW OVEN CONTROLLER -->
+        <article class="project-card-item" data-project="reflow-oven">
+          <div class="card-img-box">
+            <!-- Replace with: <img src="assets/projects/reflow_oven.jpg" alt="Reflow Oven Controller"> -->
+            <div>[ Picture Space ]</div>
+            <div style="font-size: 0.7rem; color: var(--text-subtle); margin-top: 0.25rem;">reflow_oven.jpg</div>
+          </div>
+          <div class="card-content">
+            <div class="card-tag">CV-8052 &bull; Assembly &bull; Hardware</div>
+            <h2 class="card-title">Reflow Oven Controller</h2>
+            <div class="card-arrow">
+              <span>View Case Study</span>
+              <span>&rarr;</span>
+            </div>
+          </div>
+        </article>
 
-      <!-- CARD 4: PEFT RESEARCH PAPER -->
-      <div class="project-card-thumb" data-target="detail-peft-paper">
-        <div class="thumb-media-box">
-          <!-- Replace with: <img src="assets/projects/paper_preview.jpg" alt="Paper PDF"> -->
-          <div>[ Picture Space ]</div>
-          <div style="font-size: 0.65rem; color: var(--text-subtle); margin-top: 0.2rem;">paper_preview.jpg</div>
-        </div>
-        <div>
-          <div class="thumb-tag">Research &bull; arXiv: 2603.09684</div>
-          <h2 class="thumb-title">Continual Learning in PEFT</h2>
-        </div>
-        <div class="thumb-cta">
-          <span>View Details</span>
-          <span>&rarr;</span>
-        </div>
-      </div>
+        <!-- CARD 2: FIELD-TRACKING RC CAR -->
+        <article class="project-card-item" data-project="rc-car">
+          <div class="card-img-box">
+            <!-- Replace with: <img src="assets/projects/rc_car.jpg" alt="Field-Tracking RC Car"> -->
+            <div>[ Picture Space ]</div>
+            <div style="font-size: 0.7rem; color: var(--text-subtle); margin-top: 0.25rem;">rc_car.jpg</div>
+          </div>
+          <div class="card-content">
+            <div class="card-tag">STM32 &bull; PIC32 &bull; EFM8 &bull; Robotics</div>
+            <h2 class="card-title">Field-Tracking RC Car</h2>
+            <div class="card-arrow">
+              <span>View Case Study</span>
+              <span>&rarr;</span>
+            </div>
+          </div>
+        </article>
 
+        <!-- CARD 3: FPGA DIGITAL LOGIC ANALYZER -->
+        <article class="project-card-item" data-project="logic-analyzer">
+          <div class="card-img-box">
+            <!-- Replace with: <img src="assets/projects/logic_analyzer.jpg" alt="Digital Logic Analyzer"> -->
+            <div>[ Picture Space ]</div>
+            <div style="font-size: 0.7rem; color: var(--text-subtle); margin-top: 0.25rem;">logic_analyzer.jpg</div>
+          </div>
+          <div class="card-content">
+            <div class="card-tag">Intel MAX 10 FPGA &bull; SystemVerilog</div>
+            <h2 class="card-title">Digital Logic Analyzer</h2>
+            <div class="card-arrow">
+              <span>View Case Study</span>
+              <span>&rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 4: PEFT RESEARCH PAPER -->
+        <article class="project-card-item" data-project="peft-paper">
+          <div class="card-img-box">
+            <!-- Replace with: <img src="assets/projects/paper_preview.jpg" alt="PEFT Research Paper"> -->
+            <div>[ Picture Space ]</div>
+            <div style="font-size: 0.7rem; color: var(--text-subtle); margin-top: 0.25rem;">paper_preview.jpg</div>
+          </div>
+          <div class="card-content">
+            <div class="card-tag">Research &bull; arXiv: 2603.09684 &bull; PyTorch</div>
+            <h2 class="card-title">Continual Learning in PEFT</h2>
+            <div class="card-arrow">
+              <span>View Case Study</span>
+              <span>&rarr;</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
 
 
     <!-- =======================================================================
-         EXPANDED DETAIL SECTION (UPON CLICKING A CARD)
+         SECTION 2: EXPANDED SUBMENU VIEWS (ONE PER PROJECT)
          ======================================================================= -->
-    <section class="project-detail-view" id="projectDetailSection">
+    <div id="projectDetailContainer">
 
       <!-- =====================================================================
-           DETAIL PANE 1: REFLOW OVEN CONTROLLER
+           SUBMENU 1: REFLOW OVEN CONTROLLER
            ===================================================================== -->
-      <div class="detail-pane active" id="detail-reflow-oven">
-        <div class="detail-header-flex">
-          <div>
-            <h2 class="detail-title">Reflow Oven Controller</h2>
-            <div class="detail-tools">CV-8052 Microcontroller &bull; Assembly 8052 &bull; K-Type Thermocouple &bull; Solid-State Relay (SSR) &bull; Python Telemetry</div>
+      <article class="project-submenu-view" id="view-reflow-oven">
+        <div class="submenu-nav-bar">
+          <button class="back-btn" data-back>&larr; Back to all projects</button>
+          <div class="submenu-pager">
+            <button class="pager-link" data-switch="peft-paper">&larr; Prev</button>
+            <button class="pager-link" data-switch="rc-car">Next &rarr;</button>
           </div>
         </div>
 
-        <!-- MEDIA GRID (PHOTO + VIDEO) -->
+        <div class="detail-header">
+          <h1 class="detail-title">Reflow Oven Controller</h1>
+          <div class="detail-tools">CV-8052 Microcontroller &bull; Assembly 8052 &bull; K-Type Thermocouple &bull; Solid-State Relay (SSR) &bull; Python Telemetry</div>
+        </div>
+
+        <!-- MEDIA GRID -->
         <div class="detail-media-grid">
-          <!-- Photo Placeholder -->
           <div class="media-box">
-            <!-- Replace with: <img src="assets/projects/reflow_oven.jpg" alt="Reflow Oven Controller Setup"> -->
+            <!-- Replace with: <img src="assets/projects/reflow_oven.jpg" alt="Reflow Oven Controller Hardware"> -->
             <div>[ Project Picture Space ]</div>
             <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop reflow_oven.jpg into assets/projects/</div>
           </div>
-
-          <!-- Video Placeholder -->
           <div class="video-box">
             <!-- Replace with: <iframe src="YOUR_EMBED_URL" allowfullscreen></iframe> or <video controls src="assets/projects/reflow.mp4"></video> -->
             <div class="video-box-placeholder">
@@ -197,24 +194,30 @@
         <div class="detail-footer-links">
           <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">GitHub Repository &rarr;</a>
         </div>
-      </div>
+      </article>
 
 
       <!-- =====================================================================
-           DETAIL PANE 2: FIELD-TRACKING RC CAR
+           SUBMENU 2: FIELD-TRACKING RC CAR
            ===================================================================== -->
-      <div class="detail-pane" id="detail-rc-car">
-        <div class="detail-header-flex">
-          <div>
-            <h2 class="detail-title">Line-Following / Field-Tracking RC Car</h2>
-            <div class="detail-tools">EFM8 &bull; STM32 &bull; PIC32 &bull; Bare-Metal C &bull; Inductive Sensor Array &bull; VL53L0X ToF &bull; IR Communication</div>
+      <article class="project-submenu-view" id="view-rc-car">
+        <div class="submenu-nav-bar">
+          <button class="back-btn" data-back>&larr; Back to all projects</button>
+          <div class="submenu-pager">
+            <button class="pager-link" data-switch="reflow-oven">&larr; Prev</button>
+            <button class="pager-link" data-switch="logic-analyzer">Next &rarr;</button>
           </div>
+        </div>
+
+        <div class="detail-header">
+          <h1 class="detail-title">Line-Following / Field-Tracking RC Car</h1>
+          <div class="detail-tools">EFM8 &bull; STM32 &bull; PIC32 &bull; Bare-Metal C &bull; Inductive Sensor Array &bull; VL53L0X ToF &bull; IR Communication</div>
         </div>
 
         <!-- MEDIA GRID -->
         <div class="detail-media-grid">
           <div class="media-box">
-            <!-- Replace with: <img src="assets/projects/rc_car.jpg" alt="RC Car"> -->
+            <!-- Replace with: <img src="assets/projects/rc_car.jpg" alt="Field-Tracking RC Car"> -->
             <div>[ Project Picture Space ]</div>
             <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 0.25rem;">Drop rc_car.jpg into assets/projects/</div>
           </div>
@@ -264,18 +267,24 @@
         <div class="detail-footer-links">
           <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">GitHub Repository &rarr;</a>
         </div>
-      </div>
+      </article>
 
 
       <!-- =====================================================================
-           DETAIL PANE 3: MULTI-PROTOCOL FPGA LOGIC ANALYZER
+           SUBMENU 3: MULTI-PROTOCOL FPGA LOGIC ANALYZER
            ===================================================================== -->
-      <div class="detail-pane" id="detail-logic-analyzer">
-        <div class="detail-header-flex">
-          <div>
-            <h2 class="detail-title">Multi-Protocol Digital Logic Analyzer</h2>
-            <div class="detail-tools">Intel DE10-Lite FPGA (MAX 10) &bull; SystemVerilog &bull; QuestaSim &bull; SPI &bull; I2C &bull; UART &bull; Python</div>
+      <article class="project-submenu-view" id="view-logic-analyzer">
+        <div class="submenu-nav-bar">
+          <button class="back-btn" data-back>&larr; Back to all projects</button>
+          <div class="submenu-pager">
+            <button class="pager-link" data-switch="rc-car">&larr; Prev</button>
+            <button class="pager-link" data-switch="peft-paper">Next &rarr;</button>
           </div>
+        </div>
+
+        <div class="detail-header">
+          <h1 class="detail-title">Multi-Protocol Digital Logic Analyzer</h1>
+          <div class="detail-tools">Intel DE10-Lite FPGA (MAX 10) &bull; SystemVerilog &bull; QuestaSim &bull; SPI &bull; I2C &bull; UART &bull; Python</div>
         </div>
 
         <!-- MEDIA GRID -->
@@ -322,18 +331,24 @@
         <div class="detail-footer-links">
           <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">GitHub HDL Code &rarr;</a>
         </div>
-      </div>
+      </article>
 
 
       <!-- =====================================================================
-           DETAIL PANE 4: PEFT RESEARCH PAPER
+           SUBMENU 4: PEFT RESEARCH PAPER
            ===================================================================== -->
-      <div class="detail-pane" id="detail-peft-paper">
-        <div class="detail-header-flex">
-          <div>
-            <h2 class="detail-title">On Catastrophic Forgetting in Low-Rank Decomposition-Based PEFT</h2>
-            <div class="detail-tools">Research Paper &bull; arXiv: 2603.09684 &bull; Vision Transformers (ViT) &bull; LoRA &bull; PiSSA &bull; LoRETTA &bull; WeGeFT</div>
+      <article class="project-submenu-view" id="view-peft-paper">
+        <div class="submenu-nav-bar">
+          <button class="back-btn" data-back>&larr; Back to all projects</button>
+          <div class="submenu-pager">
+            <button class="pager-link" data-switch="logic-analyzer">&larr; Prev</button>
+            <button class="pager-link" data-switch="reflow-oven">Next &rarr;</button>
           </div>
+        </div>
+
+        <div class="detail-header">
+          <h1 class="detail-title">On Catastrophic Forgetting in Low-Rank Decomposition-Based PEFT</h1>
+          <div class="detail-tools">Research Paper &bull; arXiv: 2603.09684 &bull; Vision Transformers (ViT) &bull; LoRA &bull; PiSSA &bull; LoRETTA &bull; WeGeFT</div>
         </div>
 
         <!-- MEDIA GRID -->
@@ -381,9 +396,10 @@
           <a href="https://arxiv.org/abs/2603.09684" target="_blank" rel="noopener noreferrer" class="text-link">Read Paper on arXiv &rarr;</a>
           <a href="https://github.com/Sully2005" target="_blank" rel="noopener noreferrer" class="text-link">Benchmarking Repository &rarr;</a>
         </div>
-      </div>
+      </article>
 
-    </section>
+    </div>
+
   </main>
 
   <!-- FOOTER -->
