@@ -184,7 +184,7 @@ a:hover {
    ========================================================================== */
 .about-layout {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 320px 1fr;
   gap: 3.5rem;
   align-items: start;
   padding: 4rem 0 3rem 0;
@@ -753,7 +753,7 @@ textarea.form-input {
 
 .footer-flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
