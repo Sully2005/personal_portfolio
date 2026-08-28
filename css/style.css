@@ -1,12 +1,14 @@
 /* ==========================================================================
-   SWISS EDITORIAL MINIMALISM - MUHAMMAD AHMAD
-   Inspired by David Reina (davidreina.com) with subtle Sunset Orange accents
+   SWISS EDITORIAL MINIMALISM - MUHAMMAD SULEMAN AHMAD
+   Inspired by David Reina (davidreina.com)
+   Typography: Untitled Sans / System Sans & Monospace
+   Accent: Sunset Orange (#ff5b14)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg: #0d0d0d;
+  --bg: #0c0c0c;
   --bg-surface: #141414;
   --bg-surface-hover: #191919;
   
@@ -18,13 +20,13 @@
   --text-muted: #8e8e93;
   --text-subtle: #55555a;
   
-  /* Subtle Sunset Orange Accent */
-  --accent-orange: #ff7038;
-  --accent-orange-dim: rgba(255, 112, 56, 0.12);
-  --accent-orange-border: rgba(255, 112, 56, 0.35);
+  /* Exact David Reina Sunset Orange */
+  --accent-orange: #ff5b14;
+  --accent-orange-dim: rgba(255, 91, 20, 0.12);
+  --accent-orange-border: rgba(255, 91, 20, 0.35);
   
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  --font-mono: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: 'Untitled Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   --max-w: 860px;
   --max-w-wide: 1040px;
@@ -110,7 +112,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   NAVIGATION (David Reina style with sunset orange active indicator)
+   NAVIGATION
    ========================================================================== */
 .site-nav {
   border-bottom: 1px solid var(--border);
@@ -163,7 +165,6 @@ a:hover {
   color: var(--text-main);
 }
 
-/* Active navigation item uses subtle sunset orange */
 .nav-link.active {
   color: var(--accent-orange);
   font-weight: 500;
@@ -572,12 +573,12 @@ a:hover {
 }
 
 /* ==========================================================================
-   EXPERIENCE (EDITORIAL TIMELINE)
+   EXPERIENCE (EDITORIAL CONVERSATIONAL TIMELINE)
    ========================================================================== */
 .exp-group {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 3.5rem;
   margin-bottom: 4rem;
 }
 
@@ -617,26 +618,15 @@ a:hover {
   color: var(--accent-orange);
 }
 
-.exp-bullets {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.exp-bullets li {
-  font-size: 0.925rem;
+.exp-narrative {
   color: #a0a0a0;
-  position: relative;
-  padding-left: 1.25rem;
-  line-height: 1.6;
+  font-size: 0.975rem;
+  line-height: 1.75;
 }
 
-.exp-bullets li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: var(--text-subtle);
+.exp-narrative strong {
+  color: var(--text-main);
+  font-weight: 500;
 }
 
 /* ==========================================================================
