@@ -630,19 +630,73 @@ a:hover {
 }
 
 /* ==========================================================================
-   CONTACT
+   CONTACT (MINIMALIST DIRECT EMAIL & 1-CLICK CHANNELS)
    ========================================================================== */
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
-  padding: 1rem 0 3rem 0;
-}
-
-.contact-simple-list {
+.contact-card-wrap {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.contact-email-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.contact-email-card:hover {
+  border-color: var(--border-light);
+}
+
+.contact-email-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  letter-spacing: 0.06em;
+}
+
+.contact-email-address {
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.email-main-link {
+  color: var(--text-main);
+  transition: color 0.15s ease;
+}
+
+.email-main-link:hover {
+  color: var(--accent-orange);
+}
+
+.contact-action-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+}
+
+.contact-info-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .contact-row-label {
@@ -651,88 +705,30 @@ a:hover {
   text-transform: uppercase;
   color: var(--text-subtle);
   letter-spacing: 0.05em;
-  margin-bottom: 0.25rem;
 }
 
-.contact-row-value {
+.contact-row-text {
   font-size: 0.95rem;
   color: var(--text-main);
 }
 
-.contact-form-clean {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.form-field label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  color: var(--text-subtle);
-  letter-spacing: 0.04em;
-}
-
-.form-input {
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  color: var(--text-main);
-  padding: 0.75rem 0.9rem;
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  border-radius: 0;
-  transition: border-color 0.15s ease;
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: var(--accent-orange-border);
-}
-
-textarea.form-input {
-  resize: vertical;
-  min-height: 110px;
-}
-
-.submit-btn {
-  background: var(--text-main);
-  color: var(--bg);
-  border: 1px solid var(--text-main);
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.submit-btn:hover {
-  background: var(--accent-orange);
-  border-color: var(--accent-orange);
-  color: #ffffff;
-}
-
-/* Toast */
+/* Toast Notification */
 .toast {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   background: var(--text-main);
   color: var(--bg);
-  padding: 0.65rem 1.2rem;
-  font-size: 0.825rem;
-  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
   opacity: 0;
   transform: translateY(8px);
   pointer-events: none;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
-  border-left: 2px solid var(--accent-orange);
+  border-left: 3px solid var(--accent-orange);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .toast.show {

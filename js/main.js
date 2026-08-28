@@ -133,25 +133,48 @@ function initProjectsSubmenu() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Contact Form to Mailto                                                     */
+/* Contact Interactions: 1-Click Copy & Direct Mail                            */
 /* -------------------------------------------------------------------------- */
 function initContactForm() {
-  const contactForm = document.getElementById('contactForm');
-  if (!contactForm) return;
-
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name')?.value.trim() || '';
-    const email = document.getElementById('email')?.value.trim() || '';
-    const subject = document.getElementById('subject')?.value.trim() || 'Portfolio Inquiry';
-    const message = document.getElementById('message')?.value.trim() || '';
-
-    const fullBody = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    const mailtoUrl = `mailto:ahmadsuleman726@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(fullBody)}`;
-
-    window.location.href = mailtoUrl;
-    showToast('Opening email client...');
-  });
+  const copyBtn = document.getElementById('copyEmailBtn');
+  
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      const email = copyBtn.getAttribute('data-email') || 'ahmadsuleman726@gmail.com';
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          // Fallback for older/insecure environments
+          const textarea = document.createElement('textarea');
+          textarea.value = email;
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+        }
+        
+        // Visual feedback
+        const originalText = copyBtn.innerHTML;
+        copyBtn.innerHTML = `
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px; color: var(--accent-orange);">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Copied!
+        `;
+        showToast('✓ Email copied to clipboard');
+        
+        setTimeout(() => {
+          copyBtn.innerHTML = originalText;
+        }, 2200);
+      } catch (err) {
+        showToast('Email: ' + email);
+      }
+    });
+  }
 }
 
 function showToast(message) {
