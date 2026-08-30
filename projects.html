@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <script data-goatcounter="https://sahmadmu.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Muhammad Ahmad</title>
-  <meta name="description" content="Engineering projects and research by Muhammad Ahmad: Reflow Oven Controller, Field-Tracking RC Car, FPGA Logic Analyzer, and PEFT Continual Learning Paper.">
+  <meta name="description"
+    content="Engineering projects and research by Muhammad Ahmad: Reflow Oven Controller, Field-Tracking RC Car, FPGA Logic Analyzer, and PEFT Continual Learning Paper.">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <!-- NAVIGATION -->
@@ -132,51 +136,68 @@
 
         <div class="detail-header">
           <h1 class="detail-title">Reflow Oven Controller</h1>
-          <div class="detail-tools">CV-8052 Microcontroller &bull; Assembly 8052 &bull; K-Type Thermocouple &bull; Solid-State Relay (SSR) &bull; Python Telemetry</div>
+          <div class="detail-tools">CV-8052 Microcontroller &bull; Assembly 8052 &bull; K-Type Thermocouple &bull;
+            Solid-State Relay (SSR) &bull; Python Telemetry</div>
         </div>
 
         <!-- MEDIA DISPLAY (IMAGE ONLY) -->
         <div style="margin: 2rem 0; border: 1px solid var(--border); background: var(--bg-surface); overflow: hidden;">
-          <img src="assets/projects/reflow_oven.jpg" alt="Reflow Oven Controller Hardware Setup" style="width: 100%; max-height: 480px; object-fit: contain; background: #000; display: block;">
+          <img src="assets/projects/reflow_oven.jpg" alt="Reflow Oven Controller Hardware Setup"
+            style="width: 100%; max-height: 480px; object-fit: contain; background: #000; display: block;">
         </div>
 
         <div class="detail-content">
           <p>
-            The Reflow Oven Controller is an embedded system designed to solder surface-mount devices (SMDs) onto printed circuit boards. Built around a CV-8052 microcontroller, the system regulates a 1500 W toaster oven to execute a multi-stage thermal profile while enforcing strict safety constraints.
+            The Reflow Oven Controller is an embedded system designed to solder surface-mount devices (SMDs) onto
+            printed circuit boards. Built around a CV-8052 microcontroller, the system regulates a 1500 W toaster oven
+            to execute a multi-stage thermal profile while enforcing strict safety constraints.
           </p>
 
           <div class="project-section-block">
             <div class="project-section-label">Hardware Design</div>
             <ul class="clean-list">
-              <li><strong>Temperature Sensing:</strong> Utilizes a K-type thermocouple amplified by an op-amp circuit feeding voltage to the microcontroller's ADC.</li>
-              <li><strong>Thermal Control:</strong> A solid-state relay (SSR) receives pulse-width modulation (PWM) signals to regulate average oven power.</li>
-              <li><strong>User Interface:</strong> Includes an LCD, a keypad, switches, and a 7-segment display for temperature readouts.</li>
-              <li><strong>Safety Sensing:</strong> Incorporates an onboard accelerometer to detect physical disturbances or tipping.</li>
+              <li><strong>Temperature Sensing:</strong> Utilizes a K-type thermocouple amplified by an op-amp circuit
+                feeding voltage to the microcontroller's ADC.</li>
+              <li><strong>Thermal Control:</strong> A solid-state relay (SSR) receives pulse-width modulation (PWM)
+                signals to regulate average oven power.</li>
+              <li><strong>User Interface:</strong> Includes an LCD, a keypad, switches, and a 7-segment display for
+                temperature readouts.</li>
+              <li><strong>Safety Sensing:</strong> Incorporates an onboard accelerometer to detect physical disturbances
+                or tipping.</li>
             </ul>
           </div>
 
           <div class="project-section-block">
             <div class="project-section-label">Software Design (Assembly)</div>
             <ul class="clean-list">
-              <li><strong>Interrupt-Driven Scheduler:</strong> A 1 ms hardware timer manages PWM generation, time tracking, and display updates without blocking the control loop.</li>
-              <li><strong>Finite State Machine (FSM):</strong> Orchestrates the reflow cycle through six states: idle, preheat, soak, reflow ramp, hold, cool, and error.</li>
-              <li><strong>Digital Filtering:</strong> Averages multiple ADC readings to mitigate electrical noise before calculating temperature.</li>
-              <li><strong>Non-Blocking Audio:</strong> Uses an independent timer to generate audible feedback without freezing control logic.</li>
+              <li><strong>Interrupt-Driven Scheduler:</strong> A 1 ms hardware timer manages PWM generation, time
+                tracking, and display updates without blocking the control loop.</li>
+              <li><strong>Finite State Machine (FSM):</strong> Orchestrates the reflow cycle through six states: idle,
+                preheat, soak, reflow ramp, hold, cool, and error.</li>
+              <li><strong>Digital Filtering:</strong> Averages multiple ADC readings to mitigate electrical noise before
+                calculating temperature.</li>
+              <li><strong>Non-Blocking Audio:</strong> Uses an independent timer to generate audible feedback without
+                freezing control logic.</li>
             </ul>
           </div>
 
           <div class="project-section-block">
             <div class="project-section-label">Key Features &amp; Telemetry</div>
             <ul class="clean-list">
-              <li><strong>Accuracy:</strong> Maintains temperature tolerance with a maximum error of 2.998&deg;C across the 22&deg;C to 240&deg;C range.</li>
-              <li><strong>Safety Aborts:</strong> Automatically disables heating if the oven is tilted, manually stopped, or fails to reach 50&deg;C within 60 seconds.</li>
-              <li><strong>Telemetry Dashboard &amp; Reporting:</strong> Streams serial data to a Python web interface displaying a real-time plot of the reflow curve, and automatically generates and emails a PDF run report upon cycle completion.</li>
+              <li><strong>Accuracy:</strong> Maintains temperature tolerance with a maximum error of 2.998&deg;C across
+                the 22&deg;C to 240&deg;C range.</li>
+              <li><strong>Safety Aborts:</strong> Automatically disables heating if the oven is tilted, manually
+                stopped, or fails to reach 50&deg;C within 60 seconds.</li>
+              <li><strong>Telemetry Dashboard &amp; Reporting:</strong> Streams serial data to a Python web interface
+                displaying a real-time plot of the reflow curve, and automatically generates and emails a PDF run report
+                upon cycle completion.</li>
             </ul>
           </div>
         </div>
 
         <div class="detail-footer-links">
-          <a href="https://github.com/bainspuneet2006/Elec_291_Project_1" target="_blank" rel="noopener noreferrer" class="text-link">GitHub Repository &rarr;</a>
+          <a href="https://github.com/bainspuneet2006/Elec_291_Project_1" target="_blank" rel="noopener noreferrer"
+            class="text-link">GitHub Repository &rarr;</a>
         </div>
       </article>
 
@@ -195,7 +216,8 @@
 
         <div class="detail-header">
           <h1 class="detail-title">Line-Following / Field-Tracking RC Car</h1>
-          <div class="detail-tools">EFM8 &bull; STM32 &bull; PIC32 &bull; Bare-Metal C &bull; Inductive Sensor Array &bull; VL53L0X ToF &bull; IR Communication</div>
+          <div class="detail-tools">EFM8 &bull; STM32 &bull; PIC32 &bull; Bare-Metal C &bull; Inductive Sensor Array
+            &bull; VL53L0X ToF &bull; IR Communication</div>
         </div>
 
         <!-- MEDIA GRID (PHOTO + VIDEO DEMO) -->
@@ -204,48 +226,64 @@
             <img src="assets/projects/rc_car.png" alt="Field-Tracking RC Car Prototype">
           </div>
           <div class="video-box">
-            <iframe src="https://drive.google.com/file/d/1Gtx-2IZ7jSKoOwI60eTjt1lOKH7l_hIV/preview" allow="autoplay" allowfullscreen></iframe>
+            <iframe src="https://drive.google.com/file/d/1Gtx-2IZ7jSKoOwI60eTjt1lOKH7l_hIV/preview" allow="autoplay"
+              allowfullscreen></iframe>
           </div>
         </div>
 
         <div class="detail-content">
           <p>
-            The Field Tracking Robot is an embedded system capable of manual and autonomous navigation. The vehicle detects and follows magnetic fields generated by an energized guide wire, executes pre-programmed path decisions at intersections, and responds to infrared (IR) remote commands.
+            The Field Tracking Robot is an embedded system capable of manual and autonomous navigation. The vehicle
+            detects and follows magnetic fields generated by an energized guide wire, executes pre-programmed path
+            decisions at intersections, and responds to infrared (IR) remote commands.
           </p>
 
           <div class="project-section-block">
             <div class="project-section-label">Hardware Design</div>
             <ul class="clean-list">
-              <li><strong>Processing:</strong> An EFM8 microcontroller drives the robot, an STM32 microcontroller manages the remote controller, and a PIC32 microcontroller controls a servo-based lifting mechanism on the RC car.</li>
-              <li><strong>Sensors:</strong> Three inductive coils, amplified by op-amps, detect the magnetic guide wire. A VL53L0X Time-of-Flight (ToF) sensor measures obstacle distance over I2C.</li>
+              <li><strong>Processing:</strong> An EFM8 microcontroller drives the robot, an STM32 microcontroller
+                manages the remote controller, and a PIC32 microcontroller controls a servo-based lifting mechanism on
+                the RC car.</li>
+              <li><strong>Sensors:</strong> Three inductive coils, amplified by op-amps, detect the magnetic guide wire.
+                A VL53L0X Time-of-Flight (ToF) sensor measures obstacle distance over I2C.</li>
               <li><strong>Actuation:</strong> Discrete MOSFET-based H-bridges drive bidirectional motor movement.</li>
-              <li><strong>Communication:</strong> A MOSFET-driven IR LED transmits 38 kHz modulated signals from the remote.</li>
+              <li><strong>Communication:</strong> A MOSFET-driven IR LED transmits 38 kHz modulated signals from the
+                remote.</li>
             </ul>
           </div>
 
           <div class="project-section-block">
             <div class="project-section-label">Software Design (Bare-Metal C)</div>
             <ul class="clean-list">
-              <li><strong>Control Logic:</strong> A finite state machine (FSM) maps movement states to pulse-width modulation (PWM) outputs for motor control.</li>
-              <li><strong>Navigation:</strong> A threshold-based algorithm compares left and right inductor ADC readings to maintain wire alignment. The middle inductor triggers intersection path sequences.</li>
-              <li><strong>Speed Regulation:</strong> A Proportional-Integral-Derivative (PID) controller dynamically adjusts motor PWM based on ToF sensor data to maintain a target 100 mm following distance.</li>
-              <li><strong>Communication:</strong> Timer interrupts generate PWM for IR transmission, while UART decoding translates received commands.</li>
+              <li><strong>Control Logic:</strong> A finite state machine (FSM) maps movement states to pulse-width
+                modulation (PWM) outputs for motor control.</li>
+              <li><strong>Navigation:</strong> A threshold-based algorithm compares left and right inductor ADC readings
+                to maintain wire alignment. The middle inductor triggers intersection path sequences.</li>
+              <li><strong>Speed Regulation:</strong> A Proportional-Integral-Derivative (PID) controller dynamically
+                adjusts motor PWM based on ToF sensor data to maintain a target 100 mm following distance.</li>
+              <li><strong>Communication:</strong> Timer interrupts generate PWM for IR transmission, while UART decoding
+                translates received commands.</li>
             </ul>
           </div>
 
           <div class="project-section-block">
             <div class="project-section-label">Features</div>
             <ul class="clean-list">
-              <li><strong>Navigation Modes:</strong> Operates in manual remote-control mode or autonomous guide-wire tracking mode with intersection path selection.</li>
-              <li><strong>Cruise Control &amp; Safety:</strong> PID cruise control maintaining a 100 mm buffer from obstacles; supports forward, reverse, pivot, and fine-grained adjustments.</li>
-              <li><strong>Feedback &amp; Terrain:</strong> Battery voltage monitoring LEDs, directional blinkers, audio alerts, and an isolated servo mechanism to traverse uneven surfaces.</li>
+              <li><strong>Navigation Modes:</strong> Operates in manual remote-control mode or autonomous guide-wire
+                tracking mode with intersection path selection.</li>
+              <li><strong>Cruise Control &amp; Safety:</strong> PID cruise control maintaining a 100 mm buffer from
+                obstacles; supports forward, reverse, pivot, and fine-grained adjustments.</li>
+              <li><strong>Feedback &amp; Terrain:</strong> Battery voltage monitoring LEDs, directional blinkers, audio
+                alerts, and an isolated servo mechanism to traverse uneven surfaces.</li>
             </ul>
           </div>
         </div>
 
         <div class="detail-footer-links">
-          <a href="https://github.com/bainspuneet2006/Project_2" target="_blank" rel="noopener noreferrer" class="text-link">GitHub Repository &rarr;</a>
-          <a href="https://drive.google.com/file/d/1Gtx-2IZ7jSKoOwI60eTjt1lOKH7l_hIV/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-link">Open Video on Google Drive &rarr;</a>
+          <a href="https://github.com/bainspuneet2006/Project_2" target="_blank" rel="noopener noreferrer"
+            class="text-link">GitHub Repository &rarr;</a>
+          <a href="https://drive.google.com/file/d/1Gtx-2IZ7jSKoOwI60eTjt1lOKH7l_hIV/view?usp=sharing" target="_blank"
+            rel="noopener noreferrer" class="text-link">Open Video on Google Drive &rarr;</a>
         </div>
       </article>
 
@@ -264,7 +302,8 @@
 
         <div class="detail-header">
           <h1 class="detail-title">Multi-Protocol Digital Logic Analyzer</h1>
-          <div class="detail-tools">Intel DE10-Lite FPGA (MAX 10) &bull; SystemVerilog &bull; QuestaSim &bull; SPI &bull; I2C &bull; UART &bull; Python</div>
+          <div class="detail-tools">Intel DE10-Lite FPGA (MAX 10) &bull; SystemVerilog &bull; QuestaSim &bull; SPI
+            &bull; I2C &bull; UART &bull; Python</div>
         </div>
 
         <!-- MEDIA GRID (PHOTO + VIDEO DEMO) -->
@@ -273,39 +312,51 @@
             <img src="assets/projects/logic_analyzer.png" alt="FPGA Logic Analyzer Setup">
           </div>
           <div class="video-box">
-            <iframe src="https://drive.google.com/file/d/1lQQxxBwxy-uvV-SoaFCaxJ9CTW2vschI/preview" allow="autoplay" allowfullscreen></iframe>
+            <iframe src="https://drive.google.com/file/d/1lQQxxBwxy-uvV-SoaFCaxJ9CTW2vschI/preview" allow="autoplay"
+              allowfullscreen></iframe>
           </div>
         </div>
 
         <div class="detail-content">
           <p>
-            The Logic Analyzer is a hardware tool built on the Intel DE10-Lite FPGA to capture and decode SPI, I2C, and UART serial communication protocols. The system processes incoming signals, buffers the data, and transmits it to a host PC for monitoring and analysis.
+            The Logic Analyzer is a hardware tool built on the Intel DE10-Lite FPGA to capture and decode SPI, I2C, and
+            UART serial communication protocols. The system processes incoming signals, buffers the data, and transmits
+            it to a host PC for monitoring and analysis.
           </p>
 
           <div class="project-section-block">
             <div class="project-section-label">Design &amp; Architecture</div>
             <ul class="clean-list">
               <li><strong>Processing Platform:</strong> Synthesized on the Intel DE10-Lite FPGA board.</li>
-              <li><strong>Signal Source &amp; Validation:</strong> Tested and validated using an ESP32 microcontroller to generate SPI, I2C, and UART test signals.</li>
-              <li><strong>State Machines &amp; Oversampling:</strong> SystemVerilog finite state machines (FSMs) utilize 16x oversampling to decode incoming serial data streams reliably.</li>
-              <li><strong>Data Management:</strong> A hardware FIFO buffer stores decoded data packets to prevent data loss prior to transmission across asynchronous clock domains.</li>
-              <li><strong>Verification:</strong> Hardware modules were simulated, timing-verified, and debugged using QuestaSim.</li>
+              <li><strong>Signal Source &amp; Validation:</strong> Tested and validated using an ESP32 microcontroller
+                to generate SPI, I2C, and UART test signals.</li>
+              <li><strong>State Machines &amp; Oversampling:</strong> SystemVerilog finite state machines (FSMs) utilize
+                16x oversampling to decode incoming serial data streams reliably.</li>
+              <li><strong>Data Management:</strong> A hardware FIFO buffer stores decoded data packets to prevent data
+                loss prior to transmission across asynchronous clock domains.</li>
+              <li><strong>Verification:</strong> Hardware modules were simulated, timing-verified, and debugged using
+                QuestaSim.</li>
             </ul>
           </div>
 
           <div class="project-section-block">
             <div class="project-section-label">Features &amp; Telemetry</div>
             <ul class="clean-list">
-              <li><strong>Multi-Protocol Decoding:</strong> Configurable hardware decoding for SPI, I2C, and UART protocols.</li>
-              <li><strong>User Interface:</strong> 7-segment displays provide real-time visual indication of the active protocols and decoded data.</li>
-              <li><strong>PC Telemetry:</strong> A Python script reads the serial data via UART and parses communication packets for terminal display.</li>
+              <li><strong>Multi-Protocol Decoding:</strong> Configurable hardware decoding for SPI, I2C, and UART
+                protocols.</li>
+              <li><strong>User Interface:</strong> 7-segment displays provide real-time visual indication of the active
+                protocols and decoded data.</li>
+              <li><strong>PC Telemetry:</strong> A Python script reads the serial data via UART and parses communication
+                packets for terminal display.</li>
             </ul>
           </div>
         </div>
 
         <div class="detail-footer-links">
-          <a href="https://github.com/Sully2005/Logic_Analyser" target="_blank" rel="noopener noreferrer" class="text-link">GitHub Repository &rarr;</a>
-          <a href="https://drive.google.com/file/d/1lQQxxBwxy-uvV-SoaFCaxJ9CTW2vschI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-link">Open Video on Google Drive &rarr;</a>
+          <a href="https://github.com/Sully2005/Logic_Analyser" target="_blank" rel="noopener noreferrer"
+            class="text-link">GitHub Repository &rarr;</a>
+          <a href="https://drive.google.com/file/d/1lQQxxBwxy-uvV-SoaFCaxJ9CTW2vschI/view?usp=sharing" target="_blank"
+            rel="noopener noreferrer" class="text-link">Open Video on Google Drive &rarr;</a>
         </div>
       </article>
 
@@ -324,42 +375,56 @@
 
         <div class="detail-header">
           <h1 class="detail-title">On Catastrophic Forgetting in Low-Rank Decomposition-Based PEFT</h1>
-          <div class="detail-tools">Research Paper &bull; arXiv: 2603.09684 &bull; Vision Transformers (ViT) &bull; LoRA &bull; PiSSA &bull; LoRETTA &bull; WeGeFT</div>
+          <div class="detail-tools">Research Paper &bull; arXiv: 2603.09684 &bull; Vision Transformers (ViT) &bull; LoRA
+            &bull; PiSSA &bull; LoRETTA &bull; WeGeFT</div>
         </div>
 
         <!-- MEDIA DISPLAY (PAPER COVER PREVIEW - USER'S DARK IMAGE) -->
         <div style="margin: 2rem 0; border: 1px solid var(--border); background: var(--bg-surface); overflow: hidden;">
-          <img src="assets/projects/paper_preview.png" alt="On Catastrophic Forgetting in Low-Rank PEFT Paper" style="width: 100%; max-height: 520px; object-fit: contain; background: #111; display: block;">
+          <img src="assets/projects/paper_preview.png" alt="On Catastrophic Forgetting in Low-Rank PEFT Paper"
+            style="width: 100%; max-height: 520px; object-fit: contain; background: #111; display: block;">
         </div>
 
         <div class="detail-content">
           <p>
             <em>Muhammad Ahmad, Jingjing Zheng, Yankai Cao (University of British Columbia).</em><br><br>
-            Developed in collaboration with a PhD student, this research paper investigates catastrophic forgetting in low-rank decomposition-based Parameter-Efficient Fine-Tuning (PEFT) methods under continual learning settings. It explores how constraining model updates to low-dimensional subspaces influences task interference and knowledge retention across sequential computer vision tasks.
+            Developed in collaboration with a PhD student, this research paper investigates catastrophic forgetting in
+            low-rank decomposition-based Parameter-Efficient Fine-Tuning (PEFT) methods under continual learning
+            settings. It explores how constraining model updates to low-dimensional subspaces influences task
+            interference and knowledge retention across sequential computer vision tasks.
           </p>
 
           <div class="project-section-block">
             <div class="project-section-label">Methodology &amp; Experimental Setup</div>
             <ul class="clean-list">
-              <li><strong>Model Architecture:</strong> Utilizes Vision Transformers (ViT-Base and ViT-Large) pretrained on ImageNet-1K as the base backbones.</li>
-              <li><strong>Fine-Tuning Framework:</strong> Evaluates Full Fine-Tuning against four PEFT strategies: LoRA, PiSSA, LoRETTA, and WeGeFT implemented via Hugging Face.</li>
-              <li><strong>Execution &amp; Automation:</strong> Evaluated across sequential vision tasks (CUB-200-2011, EuroSAT, Intel Image Classification, and Sports Image Classification) using automated Python and Bash execution pipelines.</li>
-              <li><strong>Evaluation Metrics:</strong> Assesses performance via Chaudhry's average forgetting metric, per-task accuracy, and final average accuracy across sequential tasks.</li>
+              <li><strong>Model Architecture:</strong> Utilizes Vision Transformers (ViT-Base and ViT-Large) pretrained
+                on ImageNet-1K as the base backbones.</li>
+              <li><strong>Fine-Tuning Framework:</strong> Evaluates Full Fine-Tuning against four PEFT strategies: LoRA,
+                PiSSA, LoRETTA, and WeGeFT implemented via Hugging Face.</li>
+              <li><strong>Execution &amp; Automation:</strong> Evaluated across sequential vision tasks (CUB-200-2011,
+                EuroSAT, Intel Image Classification, and Sports Image Classification) using automated Python and Bash
+                execution pipelines.</li>
+              <li><strong>Evaluation Metrics:</strong> Assesses performance via Chaudhry's average forgetting metric,
+                per-task accuracy, and final average accuracy across sequential tasks.</li>
             </ul>
           </div>
 
           <div class="project-section-block">
             <div class="project-section-label">Key Findings</div>
             <ul class="clean-list">
-              <li><strong>Matrix Rank Trade-offs:</strong> Standard LoRA exhibits higher forgetting at small ranks due to forced shared directions, whereas higher ranks steadily decrease forgetting.</li>
-              <li><strong>Principal Subspace Interference:</strong> PiSSA causes significant forgetting at low ranks by directly updating the principal singular vectors encoding shared representations.</li>
-              <li><strong>Structural Alignment &amp; Tensor Benefits:</strong> Structurally aligned methods (WeGeFT) and tensor-train decompositions (LoRETTA) minimize forgetting with minimal parameter budgets.</li>
+              <li><strong>Matrix Rank Trade-offs:</strong> Standard LoRA exhibits higher forgetting at small ranks due
+                to forced shared directions, whereas higher ranks steadily decrease forgetting.</li>
+              <li><strong>Principal Subspace Interference:</strong> PiSSA causes significant forgetting at low ranks by
+                directly updating the principal singular vectors encoding shared representations.</li>
+              <li><strong>Structural Alignment &amp; Tensor Benefits:</strong> Structurally aligned methods (WeGeFT) and
+                tensor-train decompositions (LoRETTA) minimize forgetting with minimal parameter budgets.</li>
             </ul>
           </div>
         </div>
 
         <div class="detail-footer-links">
-          <a href="https://arxiv.org/abs/2603.09684" target="_blank" rel="noopener noreferrer" class="text-link">Read Paper on arXiv &rarr;</a>
+          <a href="https://arxiv.org/abs/2603.09684" target="_blank" rel="noopener noreferrer" class="text-link">Read
+            Paper on arXiv &rarr;</a>
         </div>
       </article>
 
@@ -380,4 +445,5 @@
 
   <script src="js/main.js"></script>
 </body>
+
 </html>
